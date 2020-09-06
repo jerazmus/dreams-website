@@ -1,7 +1,5 @@
 <template>
   <div class="hello">
-    <h2>{{ msg2 }}</h2>
-    <h1 class="first">{{ msg }}</h1> 
   </div>
 </template>
 

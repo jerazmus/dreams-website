@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Home />
     <Navbar />
+    <Home />
     <Progress />
   </div>
 </template>
@@ -29,7 +29,6 @@ export default {
 #app {
   margin: 0;
   padding: 0;
-  background-color: red;
   height: 100vh;
 }
 </style>
