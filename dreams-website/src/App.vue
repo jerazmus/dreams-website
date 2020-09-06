@@ -30,5 +30,6 @@ export default {
   margin: 0;
   padding: 0;
   height: 100vh;
+  background-color: #001a33;
 }
 </style>
