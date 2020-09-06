@@ -9,7 +9,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      msg: "oficialna strona gildi dreamS"
+      msg: "oficialna strona gildi DreamS :)"
     }
   },
   
