@@ -1,5 +1,10 @@
 <template>
-    <div class="progress-box">{{ raid_name }}: {{ progress_value }}/10
+    <div class="progress-box">{{ raidName }}
+      <div class="progress-bosses row">
+        <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2
+" v-for="boss in bosses" :key="boss.name" v-bind:title="boss.name">
+        </div>  
+      </div>
     </div>
 </template>
 
@@ -8,8 +13,20 @@ export default {
   name: 'Progress',
   data() {
     return {
-      progress_value: "10",
-      raid_name: "Castle Nathria"
+      progressValue: "1",
+      raidName: "Castle Nathria",
+      bosses: [
+          { name: '1', status: 'Tak' },
+          { name: '2', status: 'Tak' },
+          { name: '3', status: 'Tak' },
+          { name: '4', status: 'Tak' },
+          { name: '5', status: 'Tak' },
+          { name: '6', status: 'Tak' },
+          { name: '7', status: 'Tak' },
+          { name: '8', status: 'Tak' },
+          { name: '9', status: 'Tak' },
+          { name: '10', status: 'Tak' }
+      ]
     }
   },
   
@@ -20,48 +37,54 @@ export default {
 <style scoped>
 
 .progress-box {
-    font-size: 21px;
-    text-align: center;
-    color: #b3d9ff;
-    font-family: Algerian;
-    background-color: #003366;
-    border: 5px solid #001a33;
-    margin:5%;
-    padding: 5%;
+  width: 100vw;
+  font-size: 8vw;
+  text-align: center;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  margin: auto;
 }
 
-@media (max-width: 315px) { 
-  .progress-box {
-     font-size: 18px;
-     background-color: violet;
-  }
- }
+.progress-bosses {
+  margin: auto;
+}
 
- @media (min-width: 400px) { 
-  .progress-box {
-     font-size: 26.5px;
-     background-color: violet;
-  }
- }
+.progress-boss {
+  margin: 1px;
+  height: 20vw;
+  left: 10vw;
+  font-size: 20px;
+  background-color: tomato;
+}
 
 @media (min-width: 576px) { 
-  .progress-box {
-     font-size: 39px;
-     background-color: black;
+ }
+
+ @media (max-width: 767px) { 
+   .progress-boss {
+    height: 25vw;
+    
   }
  }
 
 @media (min-width: 768px) { 
-  .progress-box {
-     font-size: 50px;
-       background-color: green;
+  .progress-box, .progress-bosses {
+     width: 60vw;
+     font-size: 5vw;
+     margin: auto;
   }
+
+  .progress-boss {
+    margin: 1px;
+    left: 5vw;
+    height: 15vw;
+    
+  }
+
 }
 
 @media (min-width: 992px) { 
-  .progress-box {
-     font-size: 68px;
-       background-color: blue;
-  }
  }
+
 </style>
