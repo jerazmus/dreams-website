@@ -29,7 +29,8 @@ export default {
 #app {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   background-color: #001a33;
 }
 </style>
