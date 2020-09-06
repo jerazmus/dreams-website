@@ -1,24 +1,12 @@
 <template>
   <div id="app">
-    <Navbar />
-    <Home />
-    <Progress />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
-import Progress from './components/Progress.vue'
-import Navbar from './components/Navbar.vue'
 
-export default {
-  name: 'App',
-  components: {
-    Home,
-    Progress,
-    Navbar
-  }
-}
+export default {}
 </script>
 
 <style>

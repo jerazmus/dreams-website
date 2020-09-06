@@ -1,7 +1,7 @@
 <template>
   <div id="navbar">
     <b-navbar toggleable="md" >
-      <b-navbar-brand href="#">DREAMS</b-navbar-brand>
+      <b-navbar-brand @click.prevent="home">DREAMS</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
         <b-icon icon="list"></b-icon>
@@ -9,9 +9,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">HOME</b-nav-item>
-          <b-nav-item href="#">TEAM</b-nav-item>
-          <b-nav-item href="#">O NAS</b-nav-item>
+          <b-nav-item @click.prevent="home">HOME</b-nav-item>
+          <b-nav-item @click.prevent="team">TEAM</b-nav-item>
+          <b-nav-item @click.prevent="about">O NAS</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -26,11 +26,21 @@ export default {
       
     }
   },
+  methods: {
+    home() {
+      this.$router.push("/");
+    },
+    team() {
+      this.$router.push("/team")
+    },
+    about() {
+      this.$router.push("/about")
+    }
+  }
   
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 .navbar {
@@ -39,7 +49,7 @@ export default {
 
 #navbar {
   background-color: #000d1a;
-  padding-top: 1vh;
+  padding-top: 0.5vh;
   font-family: 'Raleway', sans-serif;
   align-items: center;
 }
