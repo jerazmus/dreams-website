@@ -14,11 +14,15 @@ export default {}
   margin: 0;
 }
 
+body {
+  background-color: #001a33;
+}
+
 #app {
   margin: 0;
   padding: 0;
-  height: auto;
   min-height: 100vh;
+  height: auto;
   background-color: #001a33;
 }
 </style>
