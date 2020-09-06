@@ -1,24 +1,22 @@
 <template>
   <div class="hello">
     <Navbar />
-    <Progress />
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 import Navbar from "./Navbar"
-import Progress from "./Progress"
 
 export default {
   name: 'Home',
   data() {
     return {
-      msg: "oficialna strona gildi DreamS :)"
+      msg: "team"
     }
   },
   components: {
-    Navbar,
-    Progress
+    Navbar
   }
   
 }
