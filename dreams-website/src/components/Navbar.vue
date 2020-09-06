@@ -68,7 +68,9 @@ export default {
 
 .navbar-light .navbar-nav .nav-link {
   text-align: center;
-  font-weight: 300;
+  font-weight: 700;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
