@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <b-navbar toggleable="md" >
+    <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">DREAMS</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
@@ -52,6 +52,9 @@ export default {
   padding-top: 0.5vh;
   font-family: 'Raleway', sans-serif;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .navbar-light .navbar-nav .nav-link,

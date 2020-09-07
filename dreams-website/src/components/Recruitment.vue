@@ -1,6 +1,6 @@
 <template>
   <div class="recruitment">
-    <h2>Kogo poszukujemy?</h2>
+    <h2>Rekrutacja</h2>
     <div class="classes"> 
         <img :src="getRequired(className.class)"
         v-for="className in classes" 
@@ -51,9 +51,10 @@ h2 {
     text-align: center;
     border: 1px solid #b3d9ff;
     width: 60vw;
-    height: 20vh;
+    height: auto;
     margin: 20px auto 0px;
     background-color: #000d1a;
+    padding-bottom: 20px;
 }
 
 .classes {
