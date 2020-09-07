@@ -16,6 +16,14 @@ export default {}
 
 body {
   background-color: #001a33;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 #app {
