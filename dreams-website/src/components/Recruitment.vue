@@ -27,25 +27,25 @@ export default {
     data() {
         return {
             classes: [
-                { status: true, class: "dk", desc: "Frost Unholy" },
-                { status: false, class: "dh", desc: "Aktualnie nie poszukujemy" },
-                { status: true, class: "druid", desc: "Balance Feral" },
-                { status: true, class: "mage", desc: "Arcane Frost" },
-                { status: false, class: "rogue", desc: "Aktualnie nie poszukujemy" },
-                { status: true, class: "paladin", desc: "Holy" },
-                { status: false, class: "shaman", desc: "Aktualnie nie poszukujemy" },
-                { status: true, class: "priest", desc: "Discipline Holy" },
-                { status: false, class: "hunter", desc: "Aktualnie nie poszukujemy" },
-                { status: true, class: "warrior", desc: "Arms Fury" },
-                { status: false, class: "monk", desc: "Aktualnie nie poszukujemy" },
-                { status: false, class: "warlock", desc: "Aktualnie nie poszukujemy" },
+                { status: true, class: "dk", spec: ["frost", "unholy"] },
+                { status: false, class: "dh", spec: null },
+                { status: true, class: "druid", spec: ["balance", "feral"] },
+                { status: true, class: "mage", spec: ["arcane", "frost"] },
+                { status: false, class: "rogue", spec: null },
+                { status: true, class: "paladin", spec: ["holy"] },
+                { status: false, class: "shaman", spec: null },
+                { status: true, class: "priest", spec: ["discipline", "holy"] },
+                { status: false, class: "hunter", spec: null },
+                { status: true, class: "warrior", spec: ["arms", "fury"] },
+                { status: false, class: "monk", spec: null },
+                { status: false, class: "warlock", spec: null },
             ],
             requiredClasses: []
         }
     },
     methods: {
         getClass(className) {
-            return require('@/assets/'+className+'.png')
+            return require('@/assets/role/'+className+'.png')
         }
     }
 }
