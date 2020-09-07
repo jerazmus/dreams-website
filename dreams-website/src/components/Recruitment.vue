@@ -1,6 +1,6 @@
 <template>
   <div class="recruitment">
-    <h2>Rekrutacja</h2>
+    <h2>REKRUTACJA</h2>
     <div class="classes"> 
         <img :src="getClass(className.class)"
         v-for="className in classes" 
@@ -75,11 +75,13 @@ h2 {
 
 .recruitment {
     text-align: center;
-    border: 1px solid #b3d9ff;
+    -border: 1px solid #b3d9ff;
+    border: 1px solid orange;
     width: 60vw;
     height: auto;
     margin: 20px auto 0px;
-    background-color: #000d1a;
+    -background-color: #000d1a;
+    background-color: rgba(0,0,0,0.1);
     padding-bottom: 20px;
 }
 
@@ -91,7 +93,8 @@ img {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    border: 2px solid #003366;
+    -border: 2px solid #003366;
+    border: 2px solid orange;
     margin: 10px 2px 0px 2px;
     padding: 2px;
 }

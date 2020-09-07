@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div id="cover">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -32,6 +34,17 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   height: auto;
   -background-color: #001a33;
-  background-color: black;
+  -background-color: black;
+  background: url("./assets/shadowlands.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#cover {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  height: auto;
+  background-color: rgba(0,0,0,0.85);
 }
 </style>

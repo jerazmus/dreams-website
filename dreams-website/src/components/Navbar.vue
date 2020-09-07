@@ -9,9 +9,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item @click.prevent="home">HOME</b-nav-item>
-          <b-nav-item @click.prevent="team">TEAM</b-nav-item>
           <b-nav-item @click.prevent="about">O NAS</b-nav-item>
+          <b-nav-item @click.prevent="team">SKŁAD</b-nav-item>
+          <b-nav-item @click.prevent="progress">PROGRES</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -35,8 +35,11 @@ export default {
     },
     about() {
       this.$router.push("/about")
+    },
+    progress() {
+      this.$router.push("/progress")
     }
-  }
+  },
   
 }
 </script>
@@ -48,13 +51,14 @@ export default {
 }
 
 #navbar {
-  background-color: #000d1a;
+  background-color: rgba(13, 13, 13, 1);
   padding-top: 0.5vh;
   font-family: 'Raleway', sans-serif;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid #ff6600;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -87,7 +91,7 @@ export default {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #b3d9ff;
+    color: #ff6600;
 }
 
 @media (min-width: 768px) {

@@ -1,11 +1,13 @@
 <template>
   <div class="hello">
     <Navbar />
+    <Progress />
   </div>
 </template>
 
 <script>
 import Navbar from "./Navbar"
+import Progress from "./Progress"
 
 export default {
   name: 'Home',
@@ -15,7 +17,8 @@ export default {
     }
   },
   components: {
-    Navbar
+    Navbar,
+    Progress
   }
   
 }
