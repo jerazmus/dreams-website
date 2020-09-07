@@ -6,16 +6,15 @@
         v-for="className in classes" 
         :id="className.class"
         :key="className.class"
-        :class="{ 'class-nreq': !className.status }" 
-        />
+        :class="{ 'class-nreq': !className.status }" />
 
         <b-tooltip
-        v-for="className in classes"
+        v-for="className in requiredClasses"
         :key="className.class"
         :target="className.class">
-            <img :src="getClass(className.class)"
-            v-for="className in classes"
-            :key="className.class" />
+            <img :src="getSpec(className.class, specName)"
+            v-for="specName in className.spec"
+            :key="specName" :alt="specName"/>
         </b-tooltip>
     </div> 
   </div>
@@ -32,7 +31,7 @@ export default {
                 { status: true, class: "druid", spec: ["balance", "feral"] },
                 { status: true, class: "mage", spec: ["arcane", "frost"] },
                 { status: false, class: "rogue", spec: null },
-                { status: true, class: "paladin", spec: ["holy"] },
+                { status: true, class: "paladin", spec: ["holy", "retribution"] },
                 { status: false, class: "shaman", spec: null },
                 { status: true, class: "priest", spec: ["discipline", "holy"] },
                 { status: false, class: "hunter", spec: null },
@@ -46,7 +45,22 @@ export default {
     methods: {
         getClass(className) {
             return require('@/assets/role/'+className+'.png')
+        },
+        getSpec(className, specName) {
+            return require('@/assets/spec/'+className+'/'+specName+'.png')
+        },
+        filterClasses() {
+            let temp = []
+            this.classes.forEach(element => {
+                if(element.status) {
+                temp.push(element)
+                }
+            });
+            return temp
         }
+    },
+    mounted() {
+        this.requiredClasses = this.filterClasses()
     }
 }
 </script>
@@ -77,15 +91,23 @@ img {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    border: 1px solid #003366;
+    border: 2px solid #003366;
     margin: 10px 2px 0px 2px;
+    padding: 2px;
 }
 
 .class-nreq {
     filter: grayscale(1);
 }
 
-.grey-test {
-    color: red;
+.tooltip.b-tooltip {
+    opacity: 1;
+    background-color: transparent;
 }
+
+.tooltip-inner {
+    background-color: white;
+    border: 5%;
+}
+
 </style>
