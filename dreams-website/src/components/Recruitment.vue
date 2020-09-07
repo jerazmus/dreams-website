@@ -2,10 +2,21 @@
   <div class="recruitment">
     <h2>Rekrutacja</h2>
     <div class="classes"> 
-        <img :src="getRequired(className.class)"
+        <img :src="getClass(className.class)"
         v-for="className in classes" 
+        :id="className.class"
         :key="className.class"
-        :class="{ 'class-nreq': className.status }" />
+        :class="{ 'class-nreq': !className.status }" 
+        />
+
+        <b-tooltip
+        v-for="className in classes"
+        :key="className.class"
+        :target="className.class">
+            <img :src="getClass(className.class)"
+            v-for="className in classes"
+            :key="className.class" />
+        </b-tooltip>
     </div> 
   </div>
 </template>
@@ -16,23 +27,24 @@ export default {
     data() {
         return {
             classes: [
-                { status: true, class: "dk",        path: "../assets/dk.png"},
-                { status: false, class: "dh",        path: "../assets/dh.png"},
-                { status: true, class: "druid",     path: "../assets/druid.png"},
-                { status: true, class: "mage",      path: "../assets/mage.png"},
-                { status: false, class: "rogue",     path: "../assets/rogue.png"},
-                { status: true, class: "paladin",   path: "../assets/paladin.png"},
-                { status: false, class: "shaman",    path: "../assets/shaman.png"},
-                { status: true, class: "priest",    path: "../assets/priest.png"},
-                { status: false, class: "hunter",    path: "../assets/hunter.png"},
-                { status: true, class: "warrior",   path: "../assets/warrior.png"},
-                { status: true, class: "monk",      path: "../assets/monk.png"},
-                { status: false, class: "warlock",   path: "../assets/warlock.png"},
-            ]
+                { status: true, class: "dk", desc: "Frost Unholy" },
+                { status: false, class: "dh", desc: "Aktualnie nie poszukujemy" },
+                { status: true, class: "druid", desc: "Balance Feral" },
+                { status: true, class: "mage", desc: "Arcane Frost" },
+                { status: false, class: "rogue", desc: "Aktualnie nie poszukujemy" },
+                { status: true, class: "paladin", desc: "Holy" },
+                { status: false, class: "shaman", desc: "Aktualnie nie poszukujemy" },
+                { status: true, class: "priest", desc: "Discipline Holy" },
+                { status: false, class: "hunter", desc: "Aktualnie nie poszukujemy" },
+                { status: true, class: "warrior", desc: "Arms Fury" },
+                { status: false, class: "monk", desc: "Aktualnie nie poszukujemy" },
+                { status: false, class: "warlock", desc: "Aktualnie nie poszukujemy" },
+            ],
+            requiredClasses: []
         }
     },
     methods: {
-        getRequired(className) {
+        getClass(className) {
             return require('@/assets/'+className+'.png')
         }
     }
@@ -71,5 +83,9 @@ img {
 
 .class-nreq {
     filter: grayscale(1);
+}
+
+.grey-test {
+    color: red;
 }
 </style>
