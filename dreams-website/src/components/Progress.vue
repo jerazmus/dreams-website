@@ -2,24 +2,26 @@
     <div class="progress-box">{{ raidName }}
       <div class="progress-bosses row">
         <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
-        @mouseover="showNumber=boss.number" 
-        @mouseleave="showNumber=null" 
-        :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {border: '1px solid orange' } : {border: '1px solid blue'} : {border: '1px solid green'}  : {border: '1px solid grey'} ]"
-        v-for="boss in bosses" 
-        :key="boss.number"  >
-        <img v-if="boss.status !== 0" :src="boss.img" />
-        <img class="image" style="filter: grayscale(1);" v-else :src="boss.img" />
-        
-          <div  class="progress-boss-hover" v-if="showNumber===boss.number">
+          v-for="boss in bosses" 
+          :key="boss.number"  >
+            <div 
+            :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
+            class="outer-border">
+              <img v-if="boss.status !== 0" :src="boss.img" />
+              <img class="image" style="filter: grayscale(1);" v-else :src="boss.img" />
+            </div>
+            <div  class="progress-boss-hover">
+              {{boss.name}}
+              <!--
+              <p>
+              <span style="color:green;" class="progress-boss-hover-status" v-if="boss.status === 1">Normal</span>
+              <span style="color:blue" class="progress-boss-hover-status" v-if="boss.status === 2">Heroic</span> 
+              <span style="color:orange" class="progress-boss-hover-status" v-if="boss.status === 3">Mythic</span>
+              </p>
+              -->
+            </div>
            
-            {{boss.name}}
-            <p>
-            <span style="color:green;" class="progress-boss-hover-status" v-if="boss.status === 1">Normal</span>
-            <span style="color:blue" class="progress-boss-hover-status" v-if="boss.status === 2">Heroic</span> 
-            <span style="color:orange" class="progress-boss-hover-status" v-if="boss.status === 3">Mythic</span>
-            </p>
-          </div>
-        </div>  
+        </div>
       </div>
     </div>
 </template>
@@ -41,16 +43,16 @@ export default {
       raidName: "Castle Nathria",
       showNumber: null,
       bosses: [
-          { number: 1, status: 3, name: "Shriekwing", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 2, status: 3, name: "Altimor the Huntsman", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 3, status: 2, name: "Hungering Destroyer", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 4, status: 2, name: "Artificer Xy'Mox", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 5, status: 2, name: "Sun King's Salvation", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 7, status: 1, name: "The Council of Blood", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 8, status: 1, name: "Sludgefist", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 9, status: 0, name: "Stoneborne Generals", img: "https://cdn.mos.cms.futurecdn.net/p4cVpmhD26SrebJnWFB8RQ.jpg" },
-          { number: 10, status: 0, name: "Sire Denathrius", img: "https://d2skuhm0vrry40.cloudfront.net/2020/articles/2020-06-07-16-40/-1591544415043.jpg/EG11/thumbnail/750x422/format/jpg/quality/60" }
+          { number: 1, status: 3, name: "Shriekwing", img: "https://cdn.discordapp.com/attachments/234416331536072704/752586661900058684/1_Shriekwing_2.png" },
+          { number: 2, status: 3, name: "Altimor the Huntsman", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
+          { number: 3, status: 3, name: "Hungering Destroyer", img: "https://cdn.discordapp.com/attachments/234416331536072704/752601365381120030/3_Hungering_1.png" },
+          { number: 4, status: 2, name: "Artificer Xy'Mox", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
+          { number: 5, status: 1, name: "Sun King's Salvation", img: "https://cdn.discordapp.com/attachments/234416331536072704/752614396399714384/5.png" },
+          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: "https://cdn.discordapp.com/attachments/234416331536072704/752615437656785006/6.png" },
+          { number: 7, status: 0, name: "The Council of Blood", img: "https://cdn.discordapp.com/attachments/234416331536072704/752613162989256784/7.png" },
+          { number: 8, status: 0, name: "Sludgefist", img: "https://cdn.discordapp.com/attachments/234416331536072704/752609225766731886/8_Sludgefist.png" },
+          { number: 9, status: 0, name: "Stoneborne Generals", img: "https://cdn.discordapp.com/attachments/234416331536072704/752603521932853358/10_SireB.png" },
+          { number: 10, status: 0, name: "Sire Denathrius", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" }
       ]
     }
   }
@@ -68,7 +70,7 @@ export default {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   margin: auto;
-  cursor:default;
+  cursor: default;
 }
 
 .progress-bosses {
@@ -77,26 +79,24 @@ export default {
 
 .progress-boss {
   margin: 1px;
-  height: 20vw;
-  left: 10vw;
+  height: 15vw;
   font-size: 20px;
-  padding:0;
+  padding: 0;
+  left: 8vw;
 }
 
 
 .progress-boss-hover {
-  position: absolute;
-  font-size: 2vw;
+  font-size: 1.3vw;
   text-align: center;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
-  padding-top:20%;
-  z-index: 1;
-  opacity: 0;
+  opacity: 1;
   transition: .5s ease;
+  z-index: 5;
 }
 
 .progress-boss-hover:hover {
@@ -107,14 +107,24 @@ export default {
 img {
   height: 100%;
   width: 100%;
-  opacity:1;
+  opacity: 1;
+  position:absolute;
+  left: 0;
+  top: -38%;
   transition: .5s ease;
 }
 
 .progress-boss:hover img {
-  opacity: 0.2;
+  -opacity: 0.2;
 }
 
+.outer-border {
+  border-bottom: 3px solid #666666;
+  border-radius: 10%;
+  margin-top:8.5%;
+  height: 20%;
+  z-index:0;
+}
 
 @media (min-width: 576px) { 
  }
@@ -122,26 +132,31 @@ img {
  @media (max-width: 767px) { 
    .progress-boss {
     height: 25vw;
-    
   }
   .progress-boss-hover {
-    font-size: 5vw;
-    padding-top:5%;
+    font-size: 4vw;
+    padding-top:4%;
+    height: 30%;
+    z-index: 5;
   }
  }
 
 @media (min-width: 768px) { 
   .progress-box, .progress-bosses {
-     width: 70vw;
+     width: 60vw;
      font-size: 5vw;
      margin: auto;
+  }
+  .progress-bosses {
+     margin-top:4vw;
   }
 
   .progress-boss {
     margin: 1px;
-    left: 5vw;
-    height: 15vw;
-    
+    height: 10vw;
+    max-width: 20%;
+    flex: 1 0 18%;
+    left: 0;
   }
 
 }
@@ -149,4 +164,16 @@ img {
 @media (min-width: 992px) { 
  }
 
+
+
+
+
+/*
+///class=progress-boss////
+1 solid color
+:style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {border: '1px solid orange' } : {border: '1px solid blue'} : {border: '1px solid green'}  : {border: '1px solid grey'} ]"
+color
+:style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
+            
+*/
 </style>
