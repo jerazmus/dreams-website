@@ -55,8 +55,6 @@
 </template>
 
 <script>
-import Navbar from './Navbar'
-
 export default {
   name: 'Progress',
   methods: {
@@ -84,11 +82,7 @@ export default {
           { number: 10, status: 0, name: "Sire Denathrius", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" }
       ]
     }
-  },
-  components: [
-    Navbar
-  ]
-  
+  }
 }
 </script>
 
