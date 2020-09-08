@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="progress-page">
     <Navbar />
     <Progress />
   </div>
@@ -10,7 +10,7 @@ import Navbar from "./Navbar"
 import Progress from "./Progress"
 
 export default {
-  name: 'Home',
+  name: 'ProgressPage',
   data() {
     return {
       msg: "oficialna strona gildi DreamS :)"

@@ -1,11 +1,13 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <Navbar />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 export default {
   name: 'Home',
@@ -15,7 +17,8 @@ export default {
     }
   },
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
   
 }

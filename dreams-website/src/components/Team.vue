@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="team">
     <Navbar />
     <h1>{{ msg }}</h1>
   </div>
@@ -9,7 +9,7 @@
 import Navbar from "./Navbar"
 
 export default {
-  name: 'Home',
+  name: 'Team',
   data() {
     return {
       msg: "team"
