@@ -29,13 +29,15 @@
     <div class="progress-box"><p class="raid-name">Ny'alotha</p>
       <div class="progress-bosses row">
         <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
-          v-for="boss in bosses" 
+          v-for="boss in bossesNy" 
           :key="boss.number"  >
             <div 
             :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
             class="outer-border">
-              <img v-if="boss.status !== 0" :src="boss.img" />
-              <img class="image" style="filter: grayscale(1);" v-else :src="boss.img" />
+              <img
+              v-if="boss.status !== 0" :src="boss.img" />
+              <img 
+                style="filter: grayscale(1);" v-else :src="boss.img" />
             </div>
             <div  class="progress-boss-hover">
               {{boss.name}}
@@ -70,16 +72,30 @@ export default {
       progressValue: "1",
       showNumber: null,
       bosses: [
-          { number: 1, status: 0, name: "Shriekwing", img: "https://cdn.discordapp.com/attachments/234416331536072704/752586661900058684/1_Shriekwing_2.png" },
-          { number: 2, status: 0, name: "Altimor the Huntsman", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
-          { number: 3, status: 0, name: "Hungering Destroyer", img: "https://cdn.discordapp.com/attachments/234416331536072704/752601365381120030/3_Hungering_1.png" },
-          { number: 4, status: 0, name: "Artificer Xy'Mox", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
-          { number: 5, status: 0, name: "Sun King's Salvation", img: "https://cdn.discordapp.com/attachments/234416331536072704/752614396399714384/5.png" },
-          { number: 6, status: 0, name: "Lady Inerva Darkvein", img: "https://cdn.discordapp.com/attachments/234416331536072704/752615437656785006/6.png" },
+          { number: 1, status: 3, name: "Shriekwing", img: "https://cdn.discordapp.com/attachments/234416331536072704/752586661900058684/1_Shriekwing_2.png" },
+          { number: 2, status: 3, name: "Altimor the Huntsman", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
+          { number: 3, status: 2, name: "Hungering Destroyer", img: "https://cdn.discordapp.com/attachments/234416331536072704/752601365381120030/3_Hungering_1.png" },
+          { number: 4, status: 2, name: "Artificer Xy'Mox", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
+          { number: 5, status: 1, name: "Sun King's Salvation", img: "https://cdn.discordapp.com/attachments/234416331536072704/752614396399714384/5.png" },
+          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: "https://cdn.discordapp.com/attachments/234416331536072704/752615437656785006/6.png" },
           { number: 7, status: 0, name: "The Council of Blood", img: "https://cdn.discordapp.com/attachments/234416331536072704/752613162989256784/7.png" },
           { number: 8, status: 0, name: "Sludgefist", img: "https://cdn.discordapp.com/attachments/234416331536072704/752609225766731886/8_Sludgefist.png" },
           { number: 9, status: 0, name: "Stoneborne Generals", img: "https://cdn.discordapp.com/attachments/234416331536072704/752603521932853358/10_SireB.png" },
           { number: 10, status: 0, name: "Sire Denathrius", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" }
+      ],
+      bossesNy: [
+          { number: 1, status: 3, name: "Wrathion", img: "https://cdn.discordapp.com/attachments/234416331536072704/752586661900058684/1_Shriekwing_2.png" },
+          { number: 2, status: 3, name: "Maut", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
+          { number: 3, status: 3, name: "The Prophet Skitra", img: "https://cdn.discordapp.com/attachments/234416331536072704/752601365381120030/3_Hungering_1.png" },
+          { number: 4, status: 3, name: "Dark Inquisitor", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
+          { number: 5, status: 2, name: "Vexiona", img: "https://cdn.discordapp.com/attachments/234416331536072704/752614396399714384/5.png" },
+          { number: 6, status: 3, name: "The Hivemind", img: "https://cdn.discordapp.com/attachments/234416331536072704/752615437656785006/6.png" },
+          { number: 7, status: 2, name: "Ra-den", img: "https://cdn.discordapp.com/attachments/234416331536072704/752613162989256784/7.png" },
+          { number: 8, status: 3, name: "Shad'har the Insatiable", img: "https://cdn.discordapp.com/attachments/234416331536072704/752609225766731886/8_Sludgefist.png" },
+          { number: 9, status: 2, name: "Drest'agath", img: "https://cdn.discordapp.com/attachments/234416331536072704/752603521932853358/10_SireB.png" },
+          { number: 10, status: 2, name: "Il'gynoth", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" },
+          { number: 11, status: 2, name: "Carapace of N'Zoth", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" },
+          { number: 12, status: 2, name: "N'Zoth", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" }
       ]
     }
   }
@@ -107,6 +123,7 @@ export default {
 
 .progress-bosses {
   margin: auto;
+  margin-top:10vw;
 }
 
 .progress-boss {
@@ -143,18 +160,22 @@ img {
   position:absolute;
   left: 0;
   top: -38%;
+  -filter: grayscale(0.1);
+  filter: drop-shadow(0 0 5px rgba(248, 150, 4, 0.8));
   transition: .5s ease;
 }
 
 .progress-boss:hover img {
   -opacity: 0.2;
+  -transform: scale(1.1);
+  -margin-top:-0.21vw;
 }
 
 .outer-border {
-  border-bottom: 3px solid #666666;
+  -border-bottom: 3px solid #666666;
   border-radius: 10%;
   margin-top: 8.5%;
-  height: 20%;
+  height: 18%;
   z-index:0;
 }
 
@@ -196,6 +217,18 @@ img {
     max-width: 20%;
     flex: 1 0 18%;
     left: 0;
+    margin: auto;
+  }
+
+  .progress-boss:hover img {
+    -opacity: 0.2;
+    transform: scale(1.1);
+    margin-top: -0.15vw;
+    filter: drop-shadow(0 0 5px #ff6600) !important;
+  } 
+  
+  .outer-border {
+    height: 20.2%;
   }
 
 }
@@ -209,10 +242,14 @@ img {
 
 /*
 ///class=progress-boss////
-1 solid color
+//border 1px solid color
 :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {border: '1px solid orange' } : {border: '1px solid blue'} : {border: '1px solid green'}  : {border: '1px solid grey'} ]"
-color
+//border color
 :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
-            
+//filter drop-shadow
+:style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px orange)' } : {filter: 'drop-shadow(0 0 5px blue)'} : {filter: 'drop-shadow(0 0 5px green)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
+
+  
+  filter: drop-shadow(0 0 5px green);          
 */
 </style>
