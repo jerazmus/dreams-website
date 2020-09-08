@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="about">
     <Navbar />
     <h1>{{ msg }}</h1>
     <Recruitment />
