@@ -37,6 +37,7 @@ body::-webkit-scrollbar {
   -background-color: black;
   background: url("./assets/shadowlands.jpg");
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
