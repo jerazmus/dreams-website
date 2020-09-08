@@ -10,7 +10,7 @@ import Navbar from "./Navbar"
 import Progress from "./Progress"
 
 export default {
-  name: 'Home',
+  name: 'ProgressPage',
   data() {
     return {
       msg: "oficialna strona gildi DreamS :)"

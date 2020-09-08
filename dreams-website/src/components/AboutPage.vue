@@ -2,11 +2,13 @@
   <div class="hello">
     <Navbar />
     <h1>{{ msg }}</h1>
+    <Recruitment />
   </div>
 </template>
 
 <script>
 import Navbar from "./Navbar"
+import Recruitment from "./Recruitment"
 
 export default {
   name: 'Home',
@@ -16,7 +18,8 @@ export default {
     }
   },
   components: {
-    Navbar
+    Navbar,
+    Recruitment
   }
   
 }
