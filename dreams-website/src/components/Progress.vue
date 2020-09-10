@@ -1,18 +1,25 @@
 <template>
   <div>
-    <div class="progress-box"><p class="raid-name">Castle Nathria</p>
-      <div class="progress-bosses row">
+    <div class="progress-box"><p  @click="showRaidCastle = !showRaidCastle" class="raid-name">Castle Nathria</p>
+      <div class="progress-bosses row"  v-if="showRaidCastle == true">
         <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
           v-for="boss in bosses" 
           :key="boss.number"  >
             <div 
             :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
             class="outer-border">
-              <img v-if="boss.status !== 0" :src="boss.img" />
-              <img class="image" style="filter: grayscale(1);" v-else :src="boss.img" />
+              <img
+              class="bossKilled"
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #ff8000)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
+              v-if="boss.status !== 0" :src="boss.img" />
+              <img 
+              class="bossNotKilled"
+              style="filter: grayscale(1);" v-else :src="boss.img" />
             </div>
-            <div  class="progress-boss-hover">
-              {{boss.name}}
+            <div 
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#ff8000' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
+               class="progress-boss-hover">
+              {{boss.name | dropShadow}}
               <!--
               <p>
               <span style="color:green;" class="progress-boss-hover-status" v-if="boss.status === 1">Normal</span>
@@ -26,8 +33,8 @@
       </div>
     </div>
 
-    <div class="progress-box"><p class="raid-name">Ny'alotha</p>
-      <div class="progress-bosses row">
+    <div class="progress-box"><p @click="showRaidNy = !showRaidNy" class="raid-name">Ny'alotha</p>
+      <div class="progress-bosses row" v-if="showRaidNy == true">
         <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
           v-for="boss in bossesNy" 
           :key="boss.number"  >
@@ -35,11 +42,16 @@
             :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
             class="outer-border">
               <img
+              class="bossKilled"
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #ff8000)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
               v-if="boss.status !== 0" :src="boss.img" />
               <img 
-                style="filter: grayscale(1);" v-else :src="boss.img" />
+              class="bossNotKilled"
+              style="filter: grayscale(1);" v-else :src="boss.img" />
             </div>
-            <div  class="progress-boss-hover">
+            <div 
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#ff8000' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
+              class="progress-boss-hover">
               {{boss.name}}
               <!--
               <p>
@@ -61,16 +73,18 @@ export default {
   name: 'Progress',
   methods: {
 		mouseEnter: function(){
-        this.toShowOnHover = !this.toShowOnHover;   
+      this.toShowOnHover = !this.toShowOnHover;   
     },
      mouseLeave: function(){
-         this.toShowOnHover = false;   
+      this.toShowOnHover = false;   
     }
   },
   data() {
     return {
       progressValue: "1",
       showNumber: null,
+      showRaidCastle: true,
+      showRaidNy: true,
       bosses: [
           { number: 1, status: 3, name: "Shriekwing", img: "https://cdn.discordapp.com/attachments/234416331536072704/752586661900058684/1_Shriekwing_2.png" },
           { number: 2, status: 3, name: "Altimor the Huntsman", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
@@ -84,10 +98,10 @@ export default {
           { number: 10, status: 0, name: "Sire Denathrius", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" }
       ],
       bossesNy: [
-          { number: 1, status: 3, name: "Wrathion", img: "https://cdn.discordapp.com/attachments/234416331536072704/752586661900058684/1_Shriekwing_2.png" },
+          { number: 1, status: 3, name: "Wrathion", img: "https://cdn.discordapp.com/attachments/234416331536072704/753377047899799612/1_1.png" },
           { number: 2, status: 3, name: "Maut", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
           { number: 3, status: 3, name: "The Prophet Skitra", img: "https://cdn.discordapp.com/attachments/234416331536072704/752601365381120030/3_Hungering_1.png" },
-          { number: 4, status: 3, name: "Dark Inquisitor", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
+          { number: 4, status: 3, name: "Dark Inquisitor Xanesh", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
           { number: 5, status: 2, name: "Vexiona", img: "https://cdn.discordapp.com/attachments/234416331536072704/752614396399714384/5.png" },
           { number: 6, status: 3, name: "The Hivemind", img: "https://cdn.discordapp.com/attachments/234416331536072704/752615437656785006/6.png" },
           { number: 7, status: 2, name: "Ra-den", img: "https://cdn.discordapp.com/attachments/234416331536072704/752613162989256784/7.png" },
@@ -105,6 +119,7 @@ export default {
 <style scoped>
 
 .progress-box {
+  user-select: none;
   width: 100vw;
   font-size: 8vw;
   text-align: center;
@@ -161,14 +176,14 @@ img {
   left: 0;
   top: -38%;
   -filter: grayscale(0.1);
-  filter: drop-shadow(0 0 5px rgba(248, 150, 4, 0.8));
+  -filter: drop-shadow(0 0 5px rgba(248, 150, 4, 0.8));
   transition: .5s ease;
 }
 
 .progress-boss:hover img {
   -opacity: 0.2;
-  -transform: scale(1.1);
-  -margin-top:-0.21vw;
+  transform: scale(1.1);
+  margin-top: -0.21vw;
 }
 
 .outer-border {
@@ -179,6 +194,9 @@ img {
   z-index:0;
 }
 
+.bossNotKilled:hover {
+  filter: drop-shadow(0 0 5px #ff6600) !important;
+}
 @media (min-width: 576px) { 
  }
 
@@ -218,15 +236,16 @@ img {
     flex: 1 0 18%;
     left: 0;
     margin: auto;
+    margin-top:1vw;
   }
 
   .progress-boss:hover img {
     -opacity: 0.2;
     transform: scale(1.1);
     margin-top: -0.15vw;
-    filter: drop-shadow(0 0 5px #ff6600) !important;
   } 
   
+
   .outer-border {
     height: 20.2%;
   }
@@ -248,6 +267,8 @@ img {
 :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
 //filter drop-shadow
 :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px orange)' } : {filter: 'drop-shadow(0 0 5px blue)'} : {filter: 'drop-shadow(0 0 5px green)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
+//color
+:style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: 'orange' } : {color: 'blue'} : {color: 'green'}  : {color: 'grey'} ]"
 
   
   filter: drop-shadow(0 0 5px green);          
