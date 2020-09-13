@@ -9,16 +9,15 @@
             :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
             class="outer-border">
               <img
-              class="bossKilled"
-              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #ff8000)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
-              v-if="boss.status !== 0" :src="boss.img" />
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #a335ee)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
+              class="bossKilled" v-if="boss.status !== 0" :src="boss.img" />
               <img 
               class="bossNotKilled"
               style="filter: grayscale(1);" v-else :src="boss.img" />
             </div>
             <div 
-              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#ff8000' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
-               class="progress-boss-hover">
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#a335ee' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
+              class="progress-boss-hover">
               {{boss.name | dropShadow}}
               <!--
               <p>
@@ -43,14 +42,15 @@
             class="outer-border">
               <img
               class="bossKilled"
-              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #ff8000)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #a335ee)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
               v-if="boss.status !== 0" :src="boss.img" />
               <img 
               class="bossNotKilled"
               style="filter: grayscale(1);" v-else :src="boss.img" />
+              
             </div>
             <div 
-              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#ff8000' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
+              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#a335ee' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
               class="progress-boss-hover">
               {{boss.name}}
               <!--
@@ -176,7 +176,7 @@ img {
   left: 0;
   top: -38%;
   -filter: grayscale(0.1);
-  -filter: drop-shadow(0 0 5px rgba(248, 150, 4, 0.8));
+  filter: drop-shadow(0 0 5px #ff6600);
   transition: .5s ease;
 }
 
@@ -196,6 +196,10 @@ img {
 
 .bossNotKilled:hover {
   filter: drop-shadow(0 0 5px #ff6600) !important;
+}
+
+.bossKilled:hover {
+  -filter: drop-shadow(0 0 5px #ff3300) !important;
 }
 @media (min-width: 576px) { 
  }
