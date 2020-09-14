@@ -99,17 +99,17 @@ export default {
       ],
       bossesNy: [
           { number: 1, status: 3, name: "Wrathion", img: "https://cdn.discordapp.com/attachments/234416331536072704/753377047899799612/1_1.png" },
-          { number: 2, status: 3, name: "Maut", img: "https://cdn.discordapp.com/attachments/234416331536072704/752591450931200011/2_Altimor.png" },
-          { number: 3, status: 3, name: "The Prophet Skitra", img: "https://cdn.discordapp.com/attachments/234416331536072704/752601365381120030/3_Hungering_1.png" },
-          { number: 4, status: 3, name: "Dark Inquisitor Xanesh", img: "https://cdn.discordapp.com/attachments/234416331536072704/752597412933271592/4_Artificer.png" },
-          { number: 5, status: 2, name: "Vexiona", img: "https://cdn.discordapp.com/attachments/234416331536072704/752614396399714384/5.png" },
-          { number: 6, status: 3, name: "The Hivemind", img: "https://cdn.discordapp.com/attachments/234416331536072704/752615437656785006/6.png" },
-          { number: 7, status: 2, name: "Ra-den", img: "https://cdn.discordapp.com/attachments/234416331536072704/752613162989256784/7.png" },
-          { number: 8, status: 3, name: "Shad'har the Insatiable", img: "https://cdn.discordapp.com/attachments/234416331536072704/752609225766731886/8_Sludgefist.png" },
-          { number: 9, status: 2, name: "Drest'agath", img: "https://cdn.discordapp.com/attachments/234416331536072704/752603521932853358/10_SireB.png" },
-          { number: 10, status: 2, name: "Il'gynoth", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" },
-          { number: 11, status: 2, name: "Carapace of N'Zoth", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" },
-          { number: 12, status: 2, name: "N'Zoth", img: "https://cdn.discordapp.com/attachments/234416331536072704/752604164965793792/10_SireBZ.png" }
+          { number: 2, status: 3, name: "Maut", img: "https://cdn.discordapp.com/attachments/669890392983863307/755000052883390554/Maut_2.png" },
+          { number: 3, status: 3, name: "The Prophet Skitra", img: "https://cdn.discordapp.com/attachments/669890392983863307/755019828015923220/Skitra_4.png" },
+          { number: 4, status: 3, name: "Dark Inquisitor Xanesh", img: "https://cdn.discordapp.com/attachments/669890392983863307/755007422854332466/xanesh_2.png" },
+          { number: 5, status: 2, name: "Vexiona", img: "https://cdn.discordapp.com/attachments/669890392983863307/755018677568536617/Vexiona_3.png" },
+          { number: 6, status: 3, name: "The Hivemind", img: "https://cdn.discordapp.com/attachments/669890392983863307/755027161576112188/Hivemind_1.png" },
+          { number: 7, status: 2, name: "Ra-den", img: "https://cdn.discordapp.com/attachments/669890392983863307/755022165828435968/Ra-Den_2.png" },
+          { number: 8, status: 3, name: "Shad'har the Insatiable", img: "https://cdn.discordapp.com/attachments/669890392983863307/755009262056374292/Shadhar_3.png" },
+          { number: 9, status: 2, name: "Drest'agath", img: "https://cdn.discordapp.com/attachments/669890392983863307/755026590735269919/Drest_1.png" },
+          { number: 10, status: 2, name: "Il'gynoth", img: "https://cdn.discordapp.com/attachments/669890392983863307/755023516952428614/Ilgynoth_2.png" },
+          { number: 11, status: 2, name: "Carapace of N'Zoth", img: "https://cdn.discordapp.com/attachments/669890392983863307/755025542641746050/Fury_3.png" },
+          { number: 12, status: 2, name: "N'Zoth", img: "https://cdn.discordapp.com/attachments/669890392983863307/755026092078923918/NZoth_1.png" }
       ]
     }
   }
@@ -170,10 +170,10 @@ export default {
 
 img {
   height: 100%;
-  width: 100%;
+  width: 80%;
   opacity: 1;
   position:absolute;
-  left: 0;
+  left: 10%;
   top: -38%;
   -filter: grayscale(0.1);
   filter: drop-shadow(0 0 5px #ff6600);
@@ -193,6 +193,7 @@ img {
   height: 18%;
   z-index:0;
 }
+
 
 .bossNotKilled:hover {
   filter: drop-shadow(0 0 5px #ff6600) !important;
@@ -254,6 +255,10 @@ img {
     height: 20.2%;
   }
 
+  img {
+    width: 100%;
+  left: 0%;
+  }
 }
 
 @media (min-width: 992px) { 
