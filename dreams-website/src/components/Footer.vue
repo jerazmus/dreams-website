@@ -18,7 +18,7 @@ export default {
 <style scoped>
 
 #footer {
-  background-color: rgb(13, 13, 13, 1);
+  background-color: rgb(13, 13, 13, 0.8);
   font-family: 'Raleway', sans-serif;
   text-align: center;
   border-top: 1px solid #ff6600;

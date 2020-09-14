@@ -33,8 +33,6 @@ body::-webkit-scrollbar {
   padding: 0;
   min-height: 100vh;
   height: auto;
-  -background-color: #001a33;
-  -background-color: black;
   background: url("./assets/shadowlands.jpg");
   background-position: center;
   background-attachment: fixed;

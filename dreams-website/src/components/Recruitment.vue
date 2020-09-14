@@ -29,10 +29,10 @@ export default {
         return {
             classes: [
                 { status: true, class: "dk", spec: ["frost", "unholy", "blood"] },
-                { status: false, class: "dh", spec: null },
+                { status: true, class: "dh", spec: ["havoc", "vengeance"] },
                 { status: true, class: "druid", spec: ["balance", "feral", "restoration", "guardian"] },
                 { status: true, class: "mage", spec: ["arcane", "frost", "fire"] },
-                { status: true, class: "rogue", spec: ["subtlety", "assassination", "combat"] },
+                { status: true, class: "rogue", spec: ["subtlety", "assassination", "outlaw"] },
                 { status: true, class: "paladin", spec: ["holy", "retribution", "protection"] },
                 { status: true, class: "shaman", spec: ["enhancement", "restoration", "elemental"] },
                 { status: true, class: "priest", spec: ["discipline", "holy", "shadow"] },
