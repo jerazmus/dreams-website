@@ -1,12 +1,10 @@
 <template>
   <div class="progress-page">
-    <Navbar />
     <Progress />
   </div>
 </template>
 
 <script>
-import Navbar from "./Navbar"
 import Progress from "./Progress"
 
 export default {
@@ -17,7 +15,6 @@ export default {
     }
   },
   components: {
-    Navbar,
     Progress
   }
   

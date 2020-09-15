@@ -1,12 +1,10 @@
 <template>
   <div class="home">
-    <Navbar />
     <Footer />
   </div>
 </template>
 
 <script>
-import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 export default {
@@ -17,7 +15,6 @@ export default {
     }
   },
   components: {
-    Navbar,
     Footer
   }
   

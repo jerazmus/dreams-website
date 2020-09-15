@@ -1,14 +1,22 @@
 <template>
   <div id="app">
     <div id="cover">
-      <router-view></router-view>
+      <Navbar />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar"
 
-export default {}
+export default {
+  components: {
+    Navbar
+  }
+}
 </script>
 
 <style>
@@ -45,5 +53,17 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   height: auto;
   background-color: rgba(0,0,0,0.85);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 </style>
