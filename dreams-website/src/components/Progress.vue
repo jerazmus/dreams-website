@@ -88,7 +88,7 @@ export default {
       progressValue: "1",
       showNumber: null,
       showRaidCastle: true,
-      showRaidNy: true,
+      showRaidNy: false,
       bosses: [
           { number: 1, status: 3, name: "Shriekwing", img: require('@/assets/bosses/CastleNathria/1.png') },
           { number: 2, status: 3, name: "Altimor the Huntsman", img: require('@/assets/bosses/CastleNathria/2.png') },
@@ -125,12 +125,14 @@ export default {
 .progressBosses-enter-active, .progressBosses-leave-active {
   max-height: 150vw;
   opacity: 1;
-  transition: all 1s;
+  overflow: hidden;
+  transition: all 2s;
 }
 .progressBosses-enter, .progressBosses-leave-to
 {
   opacity: 0;
   max-height: 0vw;
+  transition: all 1s;
 }
 
 .progress-box {
@@ -148,6 +150,7 @@ export default {
 }
 
 .raid-name {
+  padding-top: 1vw;
   margin-left: 2vw;
 }
 
@@ -176,6 +179,7 @@ export default {
   opacity: 1;
   transition: .5s ease;
   z-index: 5;
+  padding-top: 15%;
 }
 
 .progress-boss-hover:hover {
@@ -189,7 +193,7 @@ img {
   opacity: 1;
   position:absolute;
   left: 10%;
-  top: -38%;
+  top: -15%;
   -filter: grayscale(0.1);
   filter: drop-shadow(0 0 5px #ff6600);
   transition: .3s linear;
@@ -228,7 +232,7 @@ img {
   }
   .progress-boss-hover {
     font-size: 4vw;
-    padding-top:4%;
+    padding-top:20%;
     height: 30%;
     z-index: 5;
   }
@@ -278,7 +282,8 @@ img {
 
   img {
     width: 100%;
-  left: 0%;
+    left: 0%;
+    top: -25%;
   }
 }
 
