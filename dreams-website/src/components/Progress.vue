@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div class="progress-box"><p  @click="showRaidCastle = !showRaidCastle" class="raid-name">Castle Nathria</p>
+    <div class="progress-box"><p  @click="showRaidCastle = !showRaidCastle, raidNameIconRotate()" class="raid-name">Castle Nathria<span :style= "[showRaidCastle == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
+     <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    </svg> 
+      </span></p>
       <transition name="progressBosses">
         <div  class="progress-bosses row" v-if="showRaidCastle == true">
           <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
@@ -34,7 +39,12 @@
       </transition>
     </div>
 
-    <div class="progress-box"><p @click="showRaidNy = !showRaidNy" class="raid-name">Ny'alotha, the Waking City</p>
+    <div class="progress-box"><p @click="showRaidNy = !showRaidNy" class="raid-name">Ny'alotha, the Waking City<span :style= "[showRaidNy == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
+     <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    </svg> 
+      </span></p>
       <transition name="progressBosses">
         <div class="progress-bosses row" v-if="showRaidNy == true">
           <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
@@ -76,12 +86,6 @@
 export default {
   name: 'Progress',
   methods: {
-		mouseEnter: function(){
-      this.toShowOnHover = !this.toShowOnHover;   
-    },
-    mouseLeave: function(){
-      this.toShowOnHover = false;   
-    }
   },
   data() {
     return {
@@ -126,7 +130,7 @@ export default {
   max-height: 150vw;
   opacity: 1;
   overflow: hidden;
-  transition: all 2s;
+  transition: all 3s;
 }
 .progressBosses-enter, .progressBosses-leave-to
 {
@@ -147,11 +151,19 @@ export default {
   cursor: default;
   background-color: rgba(13, 13, 13, 0.7);
   border: 1px solid #ff6600;
+  margin-top:1vw;
+  overflow: hidden;
 }
 
-.raid-name {
-  padding-top: 1vw;
+p.raid-name {
+  margin: auto;
   margin-left: 2vw;
+}
+
+.raid-name-icon {
+  position: absolute;
+  right: 22%;
+  transition: all 1s;
 }
 
 .progress-bosses {
@@ -230,6 +242,15 @@ img {
    .progress-boss {
     height: 25vw;
   }
+
+  .raid-name-icon {
+    display: none;
+  }
+
+  .raid-name {
+    text-align: center;
+  }
+
   .progress-boss-hover {
     font-size: 4vw;
     padding-top:20%;
