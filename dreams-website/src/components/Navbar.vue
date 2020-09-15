@@ -1,7 +1,12 @@
 <template>
   <div id="navbar">
     <b-navbar toggleable="md" sticky>
-      <b-navbar-brand @click.prevent="home">DREAMS</b-navbar-brand>
+      <b-navbar-brand @click.prevent="home">
+        <a href="#">
+          <img src="../../public/dreams.png">
+          DREAMS
+        </a>
+      </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
         <b-icon icon="list"></b-icon>
@@ -92,6 +97,25 @@ export default {
 
 .navbar-light .navbar-nav .nav-link:hover {
     color: #ff6600;
+}
+
+img {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 @media (min-width: 768px) {
