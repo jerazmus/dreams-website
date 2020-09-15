@@ -1,7 +1,7 @@
 <template>
   <div class="recruitment">
     <h2>REKRUTACJA</h2>
-    <div class="classes"> 
+    <div class="classes">   
         <img :src="getClass(className.class)"
         v-for="className in classes" 
         :id="className.class"
@@ -9,10 +9,10 @@
         :class="{ 'class-nreq': !className.status }" />
 
         <b-tooltip
+        placement="right"
         v-for="className in requiredClasses"
         :key="className.class"
-        :target="className.class"
-        delay="50">
+        :target="className.class">
             <img :src="getSpec(className.class, specName)"
             v-for="specName in className.spec"
             :key="specName" :alt="specName"
@@ -79,7 +79,7 @@ h2 {
     text-align: center;
     -border: 1px solid #b3d9ff;
     border: 1px solid #ff6600;
-    width: 60vw;
+    width: 12vw;
     height: auto;
     margin: 20px auto 0px;
     -background-color: #000d1a;
@@ -93,19 +93,23 @@ h2 {
 }
 
 img {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     -border: 2px solid #003366;
     border: 2px solid #ff6600;
-    margin: 10px 2px 0px 2px;
+    margin: auto auto 5px auto;
     padding: 2px;
+    display: block;
+
 }
 
 .spec-img {
     padding: 0px;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 2px;
 }
 
 .class-nreq {

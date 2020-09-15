@@ -1,12 +1,13 @@
 <template>
   <div class="about">
-    <h1>{{ msg }}</h1>
+    <About />
     <Recruitment />
   </div>
 </template>
 
 <script>
 import Recruitment from "./Recruitment"
+import About from "./About"
 
 export default {
   name: 'Home',
@@ -16,7 +17,8 @@ export default {
     }
   },
   components: {
-    Recruitment
+    Recruitment,
+    About
   }
   
 }
