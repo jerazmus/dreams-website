@@ -268,7 +268,7 @@ img {
   }
 
   .progress-box {
-    margin-top: 5vw;
+    margin-top: 2vw;
   }
 
   .progress-bosses {
@@ -305,6 +305,10 @@ img {
     width: 100%;
     left: 0%;
     top: -25%;
+  }
+
+  .raid-name-icon.bi.bi-chevron-double-left:hover {
+    color: #ff6600;
   }
 }
 
