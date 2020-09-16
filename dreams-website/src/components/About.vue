@@ -59,7 +59,7 @@ h2 {
     text-align: left;
     -border: 1px solid #b3d9ff;
     border: 1px solid #ff6600;
-    width: 45vw;
+    width: 60vw;
     height: auto;
     margin: 20px auto 0px;
     -background-color: #000d1a;

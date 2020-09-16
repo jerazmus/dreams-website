@@ -9,7 +9,7 @@
         :class="{ 'class-nreq': !className.status }" />
 
         <b-tooltip
-        placement="right"
+        placement="top"
         v-for="className in requiredClasses"
         :key="className.class"
         :target="className.class">
@@ -79,7 +79,7 @@ h2 {
     text-align: center;
     -border: 1px solid #b3d9ff;
     border: 1px solid #ff6600;
-    width: 12vw;
+    width: 60vw;
     height: auto;
     margin: 20px auto 0px;
     -background-color: #000d1a;
@@ -93,21 +93,19 @@ h2 {
 }
 
 img {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     -border: 2px solid #003366;
     border: 2px solid #ff6600;
-    margin: auto auto 5px auto;
+    margin: auto 2px 5px 2px;
     padding: 2px;
-    display: block;
-
 }
 
 .spec-img {
     padding: 0px;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     float: left;
     margin: 2px;
 }
