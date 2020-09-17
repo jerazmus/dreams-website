@@ -59,6 +59,7 @@ export default {
   background-color: rgba(13, 13, 13, 1);
   padding-top: 0.5vh;
   font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   align-items: center;
   position: sticky;
   top: 0;
