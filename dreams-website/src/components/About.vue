@@ -56,13 +56,11 @@ h2 {
 
 .about {
     text-justify: auto;
-    text-align: left;
-    -border: 1px solid #b3d9ff;
+    text-align: justify;
     border: 1px solid #ff6600;
-    width: 45vw;
+    width: 60vw;
     height: auto;
     margin: 20px auto 0px;
-    -background-color: #000d1a;
     color: white;
     background-color: rgba(0,0,0,0.3);
     padding-bottom: 20px;
@@ -76,6 +74,17 @@ h2 {
 
 .officer {
     font-weight: bolder;
+}
+
+@media (max-width: 767px) {
+    .about {
+        border: none;
+        width: 100vw;
+        margin-top: 0;
+        padding-top: 0;
+        text-align: justify;
+        text-justify: inter-character;
+    }
 }
 
 </style>
