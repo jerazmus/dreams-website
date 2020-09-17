@@ -132,6 +132,11 @@ a:hover {
     flex-direction: row;
     justify-content: flex-end;
   }
+}
 
+@media (min-width: 768px) and (max-width: 1100px) {
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 10px;
+}
 }
 </style>

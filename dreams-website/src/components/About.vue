@@ -48,6 +48,10 @@ export default {
 
 <style scoped>
 
+.about li {
+    text-align: left !important;
+}
+
 h2 {
     font-family: 'Raleway', sans-serif;
     color: white;

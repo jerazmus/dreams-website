@@ -11,7 +11,6 @@ export default {
   name: 'ProgressPage',
   data() {
     return {
-      msg: "oficialna strona gildi DreamS :)"
     }
   },
   components: {

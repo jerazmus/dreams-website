@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <p> Made by <span class="author">Meo</span> & <span class="author">Xariyosu</span></p> 
+    <p> Made by <span class="author">Meo</span> & <span class="author">Xariyosu</span></p>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ export default {
   name: 'Footer',
   data() {
     return {
+      testVar: 1
     }
   }
 }

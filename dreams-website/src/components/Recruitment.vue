@@ -134,6 +134,12 @@ img {
     .recruitment {
         border: none;
         width: 100vw;
+        margin-top: 0;
+    }
+    
+    h2 {
+        margin-top: 0;
+        padding-top: 10px;
     }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="roster col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <div class="members">
-      <div class="member" 
+      <div class="member col-sm-12 col-md-6 col-lg-6 col-xl-3" 
       v-for="member in roster"
       :key="member">
         <img src="../assets/portrait.png" />
@@ -116,20 +116,45 @@ export default {
   margin: 5px;
   float: left;
   background-color: rgba(0,0,0,0.7);
+  -max-width: 25%;
+  -flex: 1 0 23%;
+  padding: 0;
 }
 
 .nickname {
-  font-size: 26px;
+  font-size: 100%;
   margin-left: 10px;
   display: inline-block;
   height: auto;
+}
+
+@media (min-width: 576px) { 
+  .member {
+    max-width: 50%;
+    flex: 1 0 48%;
+  }
 }
 
 @media (max-width: 767px) { 
   .roster {
     border: none;
     width: 100vw;
+    margin-top: 0;
   }
 }
+
+@media (min-width: 768px) { 
+  .member {
+    max-width: 25%;
+    flex: 1 0 23%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .roster {
+    width: 80vw;
+  }
+}
+
 
 </style>
