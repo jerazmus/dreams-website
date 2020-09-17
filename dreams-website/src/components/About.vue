@@ -56,7 +56,7 @@ h2 {
 
 .about {
     text-justify: auto;
-    text-align: left;
+    text-align: justify;
     border: 1px solid #ff6600;
     width: 60vw;
     height: auto;
@@ -74,6 +74,17 @@ h2 {
 
 .officer {
     font-weight: bolder;
+}
+
+@media (max-width: 767px) {
+    .about {
+        border: none;
+        width: 100vw;
+        margin-top: 0;
+        padding-top: 0;
+        text-align: justify;
+        text-justify: inter-character;
+    }
 }
 
 </style>

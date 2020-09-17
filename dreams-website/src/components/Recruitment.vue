@@ -130,4 +130,11 @@ img {
     display: none;
 }
 
+@media (max-width: 767px) {
+    .recruitment {
+        border: none;
+        width: 100vw;
+    }
+}
+
 </style>
