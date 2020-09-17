@@ -69,6 +69,7 @@ h2 {
     background-color: rgba(0,0,0,0.3);
     padding-bottom: 20px;
     font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     padding: 20px;
 }
 
