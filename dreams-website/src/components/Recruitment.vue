@@ -9,7 +9,7 @@
         :class="{ 'class-nreq': !className.status }" />
 
         <b-tooltip
-        placement="top"
+        placement="bottom"
         v-for="className in requiredClasses"
         :key="className.class"
         :target="className.class">
@@ -29,17 +29,17 @@ export default {
         return {
             classes: [
                 { status: true, class: "dk", spec: ["frost", "unholy", "blood"] },
-                { status: true, class: "dh", spec: ["havoc", "vengeance"] },
+                { status: false, class: "dh", spec: ["havoc", "vengeance"] },
                 { status: true, class: "druid", spec: ["balance", "feral", "restoration", "guardian"] },
-                { status: true, class: "mage", spec: ["arcane", "frost", "fire"] },
+                { status: false, class: "mage", spec: ["arcane", "frost", "fire"] },
                 { status: true, class: "rogue", spec: ["subtlety", "assassination", "outlaw"] },
-                { status: true, class: "paladin", spec: ["holy", "retribution", "protection"] },
+                { status: false, class: "paladin", spec: ["holy", "retribution", "protection"] },
                 { status: true, class: "shaman", spec: ["enhancement", "restoration", "elemental"] },
-                { status: true, class: "priest", spec: ["discipline", "holy", "shadow"] },
+                { status: false, class: "priest", spec: ["discipline", "holy", "shadow"] },
                 { status: true, class: "hunter", spec: ["marksman", "survival", "beastmastery"] },
-                { status: true, class: "warrior", spec: ["arms", "fury", "protection"] },
+                { status: false, class: "warrior", spec: ["arms", "fury", "protection"] },
                 { status: true, class: "monk", spec: ["mistweaver", "windwalker", "brewmaster"] },
-                { status: true, class: "warlock", spec: ["affliction", "demonology", "destruction"] },
+                { status: false, class: "warlock", spec: ["affliction", "demonology", "destruction"] },
             ],
             requiredClasses: []
         }
