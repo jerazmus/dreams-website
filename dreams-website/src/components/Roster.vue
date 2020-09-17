@@ -8,6 +8,9 @@
         <span class="nickname"
         v-bind:style="{ color: getColor(member.class) }">
           {{ member.nick }}
+          <img :src="getRole(member.role)"
+          :alt="member.role"
+          class="role-img"/>
         </span>
       </div>
     </div>
@@ -75,6 +78,9 @@ export default {
     },
     getProfile(nickname) {
       return `https://raider.io/characters/eu/burning-legion/${nickname}`
+    },
+    getRole(role) {
+      return require('@/assets/role/'+role+'.png')
     }
   },
   components: {
@@ -113,19 +119,29 @@ export default {
 .member {
   border: 1px solid #ff6600;
   width: 265px;
-  margin: 5px;
+  margin: 10px;
   float: left;
   background-color: rgba(0,0,0,0.7);
-  -max-width: 25%;
-  -flex: 1 0 23%;
   padding: 0;
 }
 
 .nickname {
-  font-size: 100%;
+  font-size: 120%;
   margin-left: 10px;
   display: inline-block;
   height: auto;
+  font-weight: 500;
+}
+
+.role-img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 5;
+  top: -10px;
+  right: -10px;
+  border: 1px double #f87d2a;
+  border-radius: 50%;
 }
 
 @media (min-width: 576px) { 
