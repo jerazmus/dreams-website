@@ -262,6 +262,11 @@ img {
     height: 30%;
     z-index: 5;
   }
+  
+  .progress-box {
+    border: none;
+    margin-top: 0;
+  }
  }
 
 @media (min-width: 768px) { 
