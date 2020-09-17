@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="progress-box"><p  @click="showRaidCastle = !showRaidCastle, raidNameIconRotate()" class="raid-name">Castle Nathria<span :style= "[showRaidCastle == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
-     <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <div class="progress-box">
+      <p  @click="showRaidCastle = !showRaidCastle, raidNameIconRotate()" class="raid-name">Castle Nathria
+      <span :style= "[showRaidCastle == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
+      <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
       <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
     </svg> 
@@ -39,8 +41,10 @@
       </transition>
     </div>
 
-    <div class="progress-box"><p @click="showRaidNy = !showRaidNy" class="raid-name">Ny'alotha, the Waking City<span :style= "[showRaidNy == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
-     <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <div class="progress-box">
+      <p @click="showRaidNy = !showRaidNy" class="raid-name">Ny'alotha, the Waking City
+      <span :style= "[showRaidNy == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
+      <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
       <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
     </svg> 
@@ -96,14 +100,14 @@ export default {
       bosses: [
           { number: 1, status: 3, name: "Shriekwing", img: require('@/assets/bosses/CastleNathria/1.png') },
           { number: 2, status: 3, name: "Altimor the Huntsman", img: require('@/assets/bosses/CastleNathria/2.png') },
-          { number: 3, status: 2, name: "Hungering Destroyer", img: require('@/assets/bosses/CastleNathria/3.png') },
-          { number: 4, status: 2, name: "Artificer Xy'Mox", img: require('@/assets/bosses/CastleNathria/4.png') },
-          { number: 5, status: 1, name: "Sun King's Salvation", img: require('@/assets/bosses/CastleNathria/5.png') },
-          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: require('@/assets/bosses/CastleNathria/6.png') },
-          { number: 7, status: 0, name: "The Council of Blood", img: require('@/assets/bosses/CastleNathria/7.png') },
-          { number: 8, status: 0, name: "Sludgefist", img: require('@/assets/bosses/CastleNathria/8.png') },
-          { number: 9, status: 0, name: "Stoneborne Generals", img: require('@/assets/bosses/CastleNathria/10.png') },
-          { number: 10, status: 0, name: "Sire Denathrius", img: require('@/assets/bosses/CastleNathria/10.png') }
+          { number: 3, status: 3, name: "Hungering Destroyer", img: require('@/assets/bosses/CastleNathria/3.png') },
+          { number: 4, status: 3, name: "Artificer Xy'Mox", img: require('@/assets/bosses/CastleNathria/4.png') },
+          { number: 5, status: 3, name: "Sun King's Salvation", img: require('@/assets/bosses/CastleNathria/5.png') },
+          { number: 6, status: 2, name: "Lady Inerva Darkvein", img: require('@/assets/bosses/CastleNathria/6.png') },
+          { number: 7, status: 2, name: "The Council of Blood", img: require('@/assets/bosses/CastleNathria/7.png') },
+          { number: 8, status: 2, name: "Sludgefist", img: require('@/assets/bosses/CastleNathria/8.png') },
+          { number: 9, status: 2, name: "Stoneborne Generals", img: require('@/assets/bosses/CastleNathria/10.png') },
+          { number: 10, status: 2, name: "Sire Denathrius", img: require('@/assets/bosses/CastleNathria/10.png') }
       ],
       bossesNy: [
           { number: 1, status: 3, name: "Wrathion", img: require('@/assets/bosses/Ny\'alotha/1.png') },
@@ -235,6 +239,7 @@ img {
 .bossKilled:hover {
   -filter: drop-shadow(0 0 5px #ff3300) !important;
 }
+
 @media (min-width: 576px) { 
  }
 
