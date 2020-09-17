@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         getClass(className) {
-            return require('@/assets/role/'+className+'.png')
+            return require('@/assets/class/'+className+'.png')
         },
         getSpec(className, specName) {
             return require('@/assets/spec/'+className+'/'+specName+'.png')
