@@ -36,7 +36,7 @@ export default {
       this.$router.push("/");
     },
     team() {
-      this.$router.push("/team")
+      this.$router.push("/roster")
     },
     about() {
       this.$router.push("/about")

@@ -1,18 +1,21 @@
 <template>
-  <div class="team">
-    <h1>{{ msg }}</h1>
+  <div class="roster">
+      <Roster />
   </div>
 </template>
 
 <script>
+import Roster from './Roster'
+
 export default {
-  name: 'Team',
+  name: 'Home',
   data() {
     return {
-      msg: "team"
+      msg: "oficialna strona gildi DreamS :)"
     }
   },
   components: {
+      Roster
   }
   
 }

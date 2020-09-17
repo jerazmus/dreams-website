@@ -57,12 +57,10 @@ h2 {
 .about {
     text-justify: auto;
     text-align: left;
-    -border: 1px solid #b3d9ff;
     border: 1px solid #ff6600;
     width: 60vw;
     height: auto;
     margin: 20px auto 0px;
-    -background-color: #000d1a;
     color: white;
     background-color: rgba(0,0,0,0.3);
     padding-bottom: 20px;
