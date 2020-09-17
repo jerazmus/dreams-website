@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/Home'
 import AboutPage from "../components/AboutPage"
-import Team from "../components/Team"
+import RosterPage from "../components/RosterPage"
 import ProgressPage from "../components/ProgressPage"
 
 Vue.use(Router)
@@ -22,9 +22,9 @@ const router = new Router({
             component: AboutPage
         },
         {
-            path: '/team',
-            name: 'Team',
-            component: Team
+            path: '/roster',
+            name: 'RosterPage',
+            component: RosterPage
         },
         {
             path: '/progress',
