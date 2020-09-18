@@ -82,10 +82,7 @@ export default {
     getRole(role) {
       return require('@/assets/role/'+role+'.png')
     }
-  },
-  components: {
-  }
-  
+  }, 
 }
 </script>
 
@@ -109,7 +106,7 @@ export default {
 
 .members {
   display: flex;
-  margin: auto;
+  margin: 30px auto 0px;
   align-items: center;
   flex: 1;
   flex-wrap: wrap;

@@ -1,12 +1,10 @@
 <template>
   <div class="about">
-    <Recruitment />
     <About />
   </div>
 </template>
 
 <script>
-import Recruitment from "./Recruitment"
 import About from "./About"
 
 export default {
@@ -17,7 +15,6 @@ export default {
     }
   },
   components: {
-    Recruitment,
     About
   }
   

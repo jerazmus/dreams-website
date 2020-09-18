@@ -23,15 +23,6 @@
             <li>czwartek (19:00 - 22:00)</li>
             <li>niedziela (19:00 - 22:00) - zwykle przeznaczony na heroic</li>
         </ul>
-
-        <p>Jeśli jesteś zainteresowany/a graniem razem z nami, zaaplikuj poprzez guild finder lub odezwij się do jednej z osób:</p>
-
-        <p>
-            <span class="officer">Meo</span> (którakolwiek z postaci),
-            <span class="officer" style="color: #FFF569;">Arthres</span>,
-            <span class="officer" style="color: #C79C6E;">Pandavani</span>,
-            <span class="officer" style="color: #A9D271;">Alarija</span>.
-        </p>
   </div>
 </template>
 
@@ -75,10 +66,6 @@ h2 {
 
 .cutting-edge {
     color: #ff6600;
-}
-
-.officer {
-    font-weight: bolder;
 }
 
 @media (max-width: 767px) {

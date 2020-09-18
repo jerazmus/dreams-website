@@ -2,7 +2,7 @@
   <div id="navbar">
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
-        <a href="#">
+        <a href="#" class="logo">
           <img src="../../public/dreams.png">
           DREAMS
         </a>
@@ -110,7 +110,7 @@ img {
 a {
   text-decoration: none;
   color: white;
-
+  margin-left: 12px;
 }
 
 a:hover {
