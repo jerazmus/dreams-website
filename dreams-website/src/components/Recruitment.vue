@@ -9,7 +9,7 @@
         :class="{ 'class-nreq': !className.status }" />
 
         <b-tooltip
-        placement="bottom"
+        placement="top"
         v-for="className in requiredClasses"
         :key="className.class"
         :target="className.class">
@@ -19,6 +19,12 @@
             class="spec-img"/>
         </b-tooltip>
     </div> 
+    <div class="apply">
+        Jesteś zainteresowany/a dołączeniem do nas?
+        <div class="apply-button-box">
+            <button class="apply-button" @click="apply">Aplikuj!</button>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -59,6 +65,9 @@ export default {
                 }
             });
             return temp
+        },
+        apply() {
+            document.getElementById("apply").style.display = "initial";
         }
     },
     mounted() {
@@ -78,12 +87,10 @@ h2 {
 
 .recruitment {
     text-align: center;
-    -border: 1px solid #b3d9ff;
     border: 1px solid #ff6600;
-    width: 60vw;
+    width: 56.75vw;
     height: auto;
     margin: 20px auto 0px;
-    -background-color: #000d1a;
     color: white;
     background-color: rgba(0,0,0,0.3);
     padding-bottom: 20px;
@@ -97,7 +104,6 @@ img {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    -border: 2px solid #003366;
     border: 2px solid #ff6600;
     margin: auto 2px 5px 2px;
     padding: 2px;
@@ -119,7 +125,6 @@ img {
     opacity: 1;
     background-color: transparent;
     overflow: hidden;
-    -transition: 1s;
 }
 
 .tooltip.b-tooltip >>> .tooltip-inner {
@@ -131,16 +136,53 @@ img {
     display: none;
 }
 
+.apply {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: white;
+    margin-top: 5px;
+}
+
+.apply-button-box {
+    margin-top: 10px;
+}
+
+.apply-button {
+    background-color: transparent;
+    border: 1px solid #ff6600;
+    color: white;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 20px;
+    transition-duration: 0.5s;
+}
+
+button:hover {
+    border: 1px solid transparent;
+    color: #ff6600;
+    transition: 0.5s ease;
+}
+
+button:focus {
+    outline: none;
+}
+
 @media (max-width: 767px) {
     .recruitment {
         border: none;
         width: 100vw;
         margin-top: 0;
+        background: transparent;
     }
     
     h2 {
         margin-top: 0;
         padding-top: 10px;
+    }
+
+    .tooltip.b-tooltip {
+        background-color: rgb(0, 0, 0, 0.7) !important;
+        border-radius: 45%;
     }
 }
 
