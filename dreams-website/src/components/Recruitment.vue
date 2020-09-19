@@ -22,13 +22,15 @@
     <div class="apply">
         Jesteś zainteresowany/a dołączeniem do nas?
         <div class="apply-button-box">
-            <button class="apply-button" @click="apply">Aplikuj!</button>
+            <button class="apply-button" @click="openApplyBox">Aplikuj!</button>
         </div>
     </div>
   </div>
 </template>
 
 <script>
+
+
 export default {
     name: 'Recruitment',
     data() {
@@ -66,13 +68,16 @@ export default {
             });
             return temp
         },
-        apply() {
-            document.getElementById("apply").style.display = "initial";
+        openApplyBox() {
+            this.$store.state.cover = true;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.body.style.position = "fixed";
+            document.body.style.width = "100vw";
         }
     },
     mounted() {
         this.requiredClasses = this.filterClasses()
-    }
+    },
 }
 </script>
 
