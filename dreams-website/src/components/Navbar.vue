@@ -34,15 +34,19 @@ export default {
   methods: {
     home() {
       this.$router.push("/");
+      this.$store.state.cover = false;
     },
     team() {
       this.$router.push("/roster")
+      this.$store.state.cover = false;
     },
     about() {
       this.$router.push("/about")
+      this.$store.state.cover = false;
     },
     progress() {
       this.$router.push("/progress")
+      this.$store.state.cover = false;
     }
   },
   

@@ -3,7 +3,7 @@
     <div class="members">
       <div class="member col-sm-12 col-md-6 col-lg-6 col-xl-3" 
       v-for="member in roster"
-      :key="member">
+      :key="member.nick">
         <img src="../assets/portrait.png" />
         <span class="nickname"
         v-bind:style="{ color: getColor(member.class) }">
