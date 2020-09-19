@@ -240,7 +240,6 @@ img {
 }
 
 .outer-border {
-  -border-bottom: 3px solid #666666;
   border-radius: 10%;
   margin-top: 8.5%;
   height: 18%;
@@ -314,7 +313,6 @@ img {
   }
 
   .progress-bosses {
-    -margin-top:4vw;
     padding-left: 1vw;
     padding-right: 1vw;
   }
