@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
   padding: 0;
   min-height: 100vh;
   height: auto;
-  background: url("./assets/ardenweald.jpg");
+  background: url("./assets/backgrounds/ardenweald.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

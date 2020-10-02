@@ -3,9 +3,9 @@
     <h1 class="guild">Dreams</h1>
     <h1>Dołącz do gildii i razem z nami wejdź w Shadowlands</h1>
     <h2>Poszukujemy osób zarówno do progresowania contentu jak i do casualowego grania</h2>
-    <img src="@/assets/raiderio.png">
-    <img src="@/assets/wowprogress.png">
-    <img src="@/assets/warcraftlogs.png">
+    <a v-bind:target="`_blank`" v-bind:href="raiderio"><img src="@/assets/home-icons/raiderio.png"></a>
+    <a v-bind:target="`_blank`" v-bind:href="wowprogress"><img src="@/assets/home-icons/wowprogress.png"></a>
+    <a v-bind:target="`_blank`" v-bind:href="warcraftlogs"><img src="@/assets/home-icons/warcraftlogs.png"></a>
   </div>
 </template>
 
@@ -14,7 +14,9 @@ export default {
     name: 'About',
     data() {
         return {
-            
+            raiderio: "https://raider.io/guilds/eu/burning-legion/Dreams",
+            wowprogress: "https://www.wowprogress.com/guild/eu/burning-legion/Dreams",
+            warcraftlogs: "https://www.warcraftlogs.com/guild/id/564669"
         }
     }
 }
@@ -48,7 +50,7 @@ h2 {
     text-align: center;
     width: 60vw;
     height: auto;
-    margin: 40vh auto 0px;
+    margin: 50vh auto 0px;
     color: white;
     padding-bottom: 20px;
     font-family: 'Raleway', sans-serif;
@@ -57,7 +59,7 @@ h2 {
 }
 
 img {
-    margin: 10vh 5px 0px 5px;
+    margin: 9vh 5px 0px 5px;
     width: 40px;
     height: 40px;
     margin-right: 2px;
@@ -70,4 +72,25 @@ img:hover {
     border: 2px solid rgba(255,255,255,0.5);
 }
 
+@media (max-width: 767px) {
+
+    .guild {
+        font-size: 15vw;
+        margin-bottom: 5vh;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 7vw;
+        margin-bottom: 5vh;
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    .home {
+        margin: auto;
+    }
+}
 </style>
