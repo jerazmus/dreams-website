@@ -93,7 +93,7 @@ export default {
 }
 
 .roster {
-  -border: 1px solid #ff6600;
+  -border: 1px solid #478DFF;
   width: 60vw;
   height: auto;
   margin: 20px auto 0px;
@@ -114,7 +114,7 @@ export default {
 }
 
 .member {
-  border: 1px solid #ff6600;
+  border: 1px solid #478DFF;
   width: 265px;
   margin: 10px;
   float: left;
@@ -137,7 +137,7 @@ export default {
   z-index: 5;
   top: -10px;
   right: -10px;
-  border: 1px double #f87d2a;
+  border: 1px double #478DFF;
   border-radius: 50%;
 }
 

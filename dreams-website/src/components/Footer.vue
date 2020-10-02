@@ -22,7 +22,7 @@ export default {
   background-color: rgb(13, 13, 13, 0.8);
   font-family: 'Raleway', sans-serif;
   text-align: center;
-  border-top: 1px solid #ff6600;
+  border-top: 1px solid #478DFF;
   height: 5vh;
   width: 100vw;
   color: white;
@@ -32,7 +32,7 @@ export default {
 }
 
 .author {
-    color: #ff6600;
+    color: #478DFF;
     font-weight: 700;
 }
 

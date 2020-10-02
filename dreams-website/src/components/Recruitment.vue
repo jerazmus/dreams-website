@@ -92,7 +92,7 @@ h2 {
 
 .recruitment {
     text-align: center;
-    border: 1px solid #ff6600;
+    border: 1px solid #478DFF;
     width: 56.75vw;
     height: auto;
     margin: 20px auto 0px;
@@ -109,7 +109,7 @@ img {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 2px solid #ff6600;
+    border: 2px solid #478DFF;
     margin: auto 2px 5px 2px;
     padding: 2px;
 }
@@ -154,7 +154,7 @@ img {
 
 .apply-button {
     background-color: transparent;
-    border: 1px solid #ff6600;
+    border: 1px solid #478DFF;
     color: white;
     display: inline-block;
     font-weight: 300;
@@ -164,7 +164,7 @@ img {
 
 button:hover {
     border: 1px solid transparent;
-    color: #ff6600;
+    color: #478DFF;
     transition: 0.5s ease;
 }
 

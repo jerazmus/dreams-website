@@ -53,7 +53,7 @@ h2 {
 .about {
     text-justify: auto;
     text-align: justify;
-    border: 1px solid #ff6600;
+    border: 1px solid #478DFF;
     width: 60vw;
     height: auto;
     margin: 20px auto 0px;
@@ -66,7 +66,7 @@ h2 {
 }
 
 .cutting-edge {
-    color: #ff6600;
+    color: #478DFF;
 }
 
 @media (max-width: 767px) {
