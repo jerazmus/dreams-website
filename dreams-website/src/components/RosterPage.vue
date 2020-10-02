@@ -72,7 +72,7 @@ export default {
 .apply {
   margin: auto;
   position: absolute;
-  border: 1px solid #ff6600;
+  border: 1px solid #478DFF;
   background-color: rgba(0,0,0,0.9);
   z-index: 9;
   color: white;
@@ -96,7 +96,7 @@ export default {
 
 .apply-button {
   background-color: transparent;
-  border: 1px solid #ff6600;
+  border: 1px solid #478DFF;
   color: white;
   display: inline-block;
   font-weight: 300;
@@ -106,7 +106,7 @@ export default {
 
 button:hover {
   border: 1px solid transparent;
-  color: #ff6600;
+  color: #478DFF;
   transition: 0.5s ease;
 }
 

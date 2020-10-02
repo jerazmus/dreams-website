@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/Home'
+import HomePage from '../components/HomePage'
 import AboutPage from "../components/AboutPage"
 import RosterPage from "../components/RosterPage"
 import ProgressPage from "../components/ProgressPage"
@@ -13,8 +13,8 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            name: 'Home',
-            component: Home
+            name: 'HomePage',
+            component: HomePage
         },
         {
             path: '/about',

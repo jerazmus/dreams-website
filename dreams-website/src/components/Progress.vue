@@ -2,7 +2,7 @@
   <div>
     <div class="progress-box">
       <p  @click="showRaidCastle = !showRaidCastle, raidNameIconRotate()" class="raid-name">
-        <span :style= "[ userWidth < 768 ? showRaidCastle ? {color:'#ff6600'} : {color:'white'} : {color:'white'} ]" >
+        <span :style= "[ userWidth < 768 ? showRaidCastle ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" >
           Castle Nathria
         </span>
         <span :style= "[showRaidCastle == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
@@ -47,7 +47,7 @@
 
     <div class="progress-box">
       <p @click="showRaidNy = !showRaidNy" class="raid-name">
-        <span :style= "[ userWidth < 768 ? showRaidNy ? {color:'#ff6600'} : {color:'white'} : {color:'white'} ]" >
+        <span :style= "[ userWidth < 768 ? showRaidNy ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" >
           Ny'alotha, the Waking City
         </span>
         <span :style= "[showRaidNy == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
@@ -170,7 +170,7 @@ export default {
   margin: auto;
   cursor: default;
   background-color: rgba(13, 13, 13, 0.7);
-  border: 1px solid #ff6600;
+  border: 1px solid #478DFF;
   margin-top:1vw;
   overflow: hidden;
 }
@@ -227,7 +227,7 @@ img {
   left: 10%;
   top: -15%;
   -filter: grayscale(0.1);
-  filter: drop-shadow(0 0 5px #ff6600);
+  filter: drop-shadow(0 0 5px #478DFF);
   transition: .3s linear;
 }
 
@@ -251,7 +251,7 @@ img {
 }
 
 .bossNotKilled:hover {
-  filter: drop-shadow(0 0 5px #ff6600) !important;
+  filter: drop-shadow(0 0 5px #478DFF) !important;
 }
 
 .bossKilled:hover {
@@ -348,7 +348,7 @@ img {
   }
 
   .raid-name-icon.bi.bi-chevron-double-left:hover {
-    color: #ff6600;
+    color: #478DFF;
   }
 }
 

@@ -3,7 +3,7 @@
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
         <a href="#" class="logo">
-          <img src="../../public/dreams.png">
+          <!-- <img src="../../public/dreams.png"> -->
           DREAMS
         </a>
       </b-navbar-brand>
@@ -60,7 +60,7 @@ export default {
 }
 
 #navbar {
-  background-color: rgba(13, 13, 13, 1);
+  -background-color: rgba(13, 13, 13, 0.6);
   padding-top: 0.5vh;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
@@ -68,7 +68,7 @@ export default {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid #ff6600;
+  -border-bottom: 1px solid #478DFF;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -98,10 +98,11 @@ export default {
   font-weight: 700;
   margin-left: 0.5em;
   margin-right: 0.5em;
+  transition: 0.5s;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #ff6600;
+    color: #478DFF;
 }
 
 img {

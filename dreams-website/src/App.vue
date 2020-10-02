@@ -41,10 +41,11 @@ body::-webkit-scrollbar {
   padding: 0;
   min-height: 100vh;
   height: auto;
-  background: url("./assets/shadowlands.jpg");
+  background: url("./assets/backgrounds/ardenweald.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #cover {
@@ -52,7 +53,7 @@ body::-webkit-scrollbar {
   padding: 0;
   min-height: 100vh;
   height: auto;
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(0,0,0,0.6);
 }
 
 .fade-enter-active,
