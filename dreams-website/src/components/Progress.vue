@@ -1,15 +1,9 @@
 <template>
   <div>
-    <div class="progress-box">
-      <p  @click="showRaidCastle = !showRaidCastle, raidNameIconRotate()" class="raid-name">
+    <div class="progress-box castleNathria-box">
+      <p class="raid-name">
         <span :style= "[ userWidth < 768 ? showRaidCastle ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" >
           Castle Nathria
-        </span>
-        <span :style= "[showRaidCastle == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
-          <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-            <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-          </svg> 
         </span>
       </p>
       <transition name="progressBosses">
@@ -18,37 +12,40 @@
             v-for="boss in bosses" 
             :key="boss.number"  >
               <div 
-              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
+              :style= "[boss.status > 0 ? {'border-color': '#570505'} : {'border-color': 'grey'} ]"
               class="outer-border">
-                <img
-                :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #a335ee)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
+              <img
                 class="bossKilled" v-if="boss.status !== 0" :src="boss.img" />
                 <img 
-                class="bossNotKilled"
-                style="filter: grayscale(1);" v-else :src="boss.img" />
+                class="bossNotKilledNathria" v-else :src="boss.img" />
               </div>
+              <!--
               <div 
                 :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#a335ee' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
                 class="progress-boss-hover">
                 {{boss.name | dropShadow}}
-                <!--
                 <p>
                 <span style="color:green;" class="progress-boss-hover-status" v-if="boss.status === 1">Normal</span>
                 <span style="color:blue" class="progress-boss-hover-status" v-if="boss.status === 2">Heroic</span> 
                 <span style="color:orange" class="progress-boss-hover-status" v-if="boss.status === 3">Mythic</span>
                 </p>
-                -->
               </div>
-            
+              -->
           </div>
         </div>
       </transition>
+      <div class="progress">
+        <div class="progress-bar-count">{{progressCount(bosses)}} / {{bosses.length}}</div>
+        <div class="progress-bar" role="progressbar"     :style="{width:progressPercent(bosses)+'%'}" aria-valuemin="0" aria-valuemax="100">
+          
+        </div>
+      </div>
     </div>
 
     <div class="progress-box">
       <p @click="showRaidNy = !showRaidNy" class="raid-name">
         <span :style= "[ userWidth < 768 ? showRaidNy ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" >
-          Ny'alotha, the Waking City
+          Poprzednie raidy
         </span>
         <span :style= "[showRaidNy == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
           <svg width="2vw" height="1em" viewBox="0 4 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -58,34 +55,38 @@
         </span>
       </p>
       <transition name="progressBosses">
-        <div class="progress-bosses row" v-if="showRaidNy == true">
-          <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
+        <div class="progress-bosses NyAlotha-box row" v-if="showRaidNy == true">
+          <div class="old-raid-name">Ny'alotha, the Waking City</div>
+          <div class="old-progress-boss col-5 col-sm-5 col-md-1 col-lg-1 col-xl-1"  
             v-for="boss in bossesNy" 
             :key="boss.number"  >
               <div 
-              :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {'border-color': 'orange' } : {'border-color': 'blue'} : {'border-color': 'green'}  : {'border-color': 'grey'} ]"
-              class="outer-border">
+              :style= "[boss.status > 0 ? {'border-color': '#360536'}  : {'border-color': 'grey'} ]"
+              class="old-outer-border">
                 <img
-                class="bossKilled"
-                :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {filter: 'drop-shadow(0 0 5px #a335ee)' } : {filter: 'drop-shadow(0 0 5px #0070dd)'} : {filter: 'drop-shadow(0 0 5px #1eff00)'}  : {filter: 'drop-shadow(0 0 5px grey)'} ]"
-                v-if="boss.status !== 0" :src="boss.img" />
+                class="bossKilled" v-if="boss.status !== 0" :src="boss.img" />
                 <img 
                 class="bossNotKilled" v-else :src="boss.img" />
                 
               </div>
+                <!--
               <div 
                 :style= "[boss.status > 0 ? boss.status > 1 ? boss.status > 2 ? {color: '#a335ee' } : {color: '#0070dd'} : {color: '#1eff00'}  : {color: 'grey'} ]"
                 class="progress-boss-hover">
                 {{boss.name}}
-                <!--
                 <p>
                 <span style="color:green;" class="progress-boss-hover-status" v-if="boss.status === 1">Normal</span>
                 <span style="color:blue" class="progress-boss-hover-status" v-if="boss.status === 2">Heroic</span> 
                 <span style="color:orange" class="progress-boss-hover-status" v-if="boss.status === 3">Mythic</span>
                 </p>
-                -->
+               
               </div>
-            
+              -->
+          </div>
+          <div class="progress progressNyAlotha">
+            <div class="progress-bar-count">{{progressCount(bossesNy)}} / {{bossesNy.length}}</div>
+            <div class="progress-bar-NyAlotha" role="progressbar"     :style="{width:progressPercent(bossesNy)+'%'}" aria-valuemin="0" aria-valuemax="100">  
+            </div>
           </div>
         </div>
       </transition>
@@ -106,6 +107,20 @@ export default {
   methods: {
     widthUpdate() {
       this.userWidth = window.innerWidth;
+    },
+    progressCount(bosses) {
+      let bossesCount = 0;
+      bosses.forEach(boss => {
+        if(boss.status != 0) bossesCount++;
+      });
+      return bossesCount;
+    },
+    progressPercent(bosses) {
+      let bossesCount = 0;
+      bosses.forEach(boss => {
+        if(boss.status != 0) bossesCount++;
+      });
+      return (bossesCount/bosses.length)*100;
     }
   },
   data() {
@@ -114,30 +129,30 @@ export default {
       showRaidCastle: true,
       showRaidNy: false,
       bosses: [
-          { number: 1, status: 3, name: "Shriekwing", img: require('@/assets/bosses/CastleNathria/1.png') },
-          { number: 2, status: 3, name: "Altimor the Huntsman", img: require('@/assets/bosses/CastleNathria/2.png') },
-          { number: 3, status: 3, name: "Hungering Destroyer", img: require('@/assets/bosses/CastleNathria/3.png') },
-          { number: 4, status: 3, name: "Artificer Xy'Mox", img: require('@/assets/bosses/CastleNathria/4.png') },
-          { number: 5, status: 3, name: "Sun King's Salvation", img: require('@/assets/bosses/CastleNathria/5.png') },
-          { number: 6, status: 2, name: "Lady Inerva Darkvein", img: require('@/assets/bosses/CastleNathria/6.png') },
-          { number: 7, status: 2, name: "The Council of Blood", img: require('@/assets/bosses/CastleNathria/7.png') },
-          { number: 8, status: 2, name: "Sludgefist", img: require('@/assets/bosses/CastleNathria/8.png') },
-          { number: 9, status: 2, name: "Stoneborne Generals", img: require('@/assets/bosses/CastleNathria/10.png') },
-          { number: 10, status: 2, name: "Sire Denathrius", img: require('@/assets/bosses/CastleNathria/10.png') }
+          { number: 1, status: 1, name: "Shriekwing", img: require('@/assets/bosses/CastleNathria/1.png') },
+          { number: 2, status: 0, name: "Altimor the Huntsman", img: require('@/assets/bosses/CastleNathria/2.png') },
+          { number: 3, status: 0, name: "Hungering Destroyer", img: require('@/assets/bosses/CastleNathria/3.png') },
+          { number: 4, status: 0, name: "Artificer Xy'Mox", img: require('@/assets/bosses/CastleNathria/4.png') },
+          { number: 5, status: 0, name: "Sun King's Salvation", img: require('@/assets/bosses/CastleNathria/5.png') },
+          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: require('@/assets/bosses/CastleNathria/6.png') },
+          { number: 7, status: 0, name: "The Council of Blood", img: require('@/assets/bosses/CastleNathria/7.png') },
+          { number: 8, status: 3, name: "Sludgefist", img: require('@/assets/bosses/CastleNathria/8.png') },
+          { number: 9, status: 0, name: "Stoneborne Generals", img: require('@/assets/bosses/CastleNathria/10.png') },
+          { number: 10, status: 5, name: "Sire Denathrius", img: require('@/assets/bosses/CastleNathria/10.png') }
       ],
       bossesNy: [
           { number: 1, status: 3, name: "Wrathion", img: require('@/assets/bosses/Ny\'alotha/1.png') },
           { number: 2, status: 3, name: "Maut", img: require('@/assets/bosses/Ny\'alotha/2.png') },
           { number: 3, status: 3, name: "The Prophet Skitra", img: require('@/assets/bosses/Ny\'alotha/3.png') },
           { number: 4, status: 3, name: "Dark Inquisitor Xanesh", img: require('@/assets/bosses/Ny\'alotha/4.png') },
-          { number: 5, status: 2, name: "Vexiona", img: require('@/assets/bosses/Ny\'alotha/5.png') },
+          { number: 5, status: 0, name: "Vexiona", img: require('@/assets/bosses/Ny\'alotha/5.png') },
           { number: 6, status: 3, name: "The Hivemind", img: require('@/assets/bosses/Ny\'alotha/6.png') },
-          { number: 7, status: 2, name: "Ra-den", img: require('@/assets/bosses/Ny\'alotha/7.png') },
+          { number: 7, status: 0, name: "Ra-den", img: require('@/assets/bosses/Ny\'alotha/7.png') },
           { number: 8, status: 3, name: "Shad'har the Insatiable", img: require('@/assets/bosses/Ny\'alotha/8.png') },
-          { number: 9, status: 2, name: "Drest'agath", img: require('@/assets/bosses/Ny\'alotha/9.png') },
-          { number: 10, status: 2, name: "Il'gynoth", img: require('@/assets/bosses/Ny\'alotha/10.png') },
-          { number: 11, status: 2, name: "Carapace of N'Zoth", img: require('@/assets/bosses/Ny\'alotha/11.png') },
-          { number: 12, status: 2, name: "N'Zoth", img: require('@/assets/bosses/Ny\'alotha/12.png') }
+          { number: 9, status: 0, name: "Drest'agath", img: require('@/assets/bosses/Ny\'alotha/9.png') },
+          { number: 10, status: 0, name: "Il'gynoth", img: require('@/assets/bosses/Ny\'alotha/10.png') },
+          { number: 11, status: 0, name: "Carapace of N'Zoth", img: require('@/assets/bosses/Ny\'alotha/11.png') },
+          { number: 12, status: 0, name: "N'Zoth", img: require('@/assets/bosses/Ny\'alotha/12.png') }
       ]
     }
   }
@@ -145,6 +160,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 
 .progressBosses-enter-active, .progressBosses-leave-active {
   max-height: 150vw;
@@ -175,9 +192,30 @@ export default {
   overflow: hidden;
 }
 
+.castleNathria-box {
+  background-image: url("../assets/backgrounds/Nathria.jpg");
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: 100%;
+}
+
+.NyAlotha-box {
+  background-image: url("../assets/backgrounds/nyalotha.jpg");
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: 100%;
+}
+
 p.raid-name {
   margin: auto;
   margin-left: 2vw;
+}
+
+.old-raid-name {
+  width: 100%;
+  margin-bottom: 1vw;
+  font-size: 3vw;
+  color: #ffffff;
 }
 
 .raid-name-icon {
@@ -223,24 +261,25 @@ img {
   height: 100%;
   width: 80%;
   opacity: 1;
-  position:absolute;
-  left: 10%;
-  top: -15%;
+  -position:absolute;
+  -left: 10%;
+  -top: -15%;
   -filter: grayscale(0.1);
-  filter: drop-shadow(0 0 5px #478DFF);
+  -filter: drop-shadow(0 0 5px #478DFF);
   transition: .3s linear;
+  vertical-align: 0%;
 }
 
 .progress-boss:hover img {
   -opacity: 0.2;
-  height: 110%;
-  width: 90%;
-  margin-left: -2vw;
-  margin-top: -1vw;
+  -height: 110%;
+  -width: 90%;
+  -margin-left: -2vw;
+  -margin-top: -1vw;
 }
 
 .outer-border {
-  border-radius: 10%;
+  -border-radius: 10%;
   margin-top: 8.5%;
   height: 18%;
   z-index:0;
@@ -250,8 +289,16 @@ img {
   filter: grayscale(1);
 }
 
+.bossNotKilledNathria {
+  filter: grayscale(1);
+}
+
+.bossNotKilledNathria:hover {
+  filter: drop-shadow(0 0 3px #570505) !important;
+}
+
 .bossNotKilled:hover {
-  filter: drop-shadow(0 0 5px #478DFF) !important;
+  filter: drop-shadow(0 0 3px #570357) !important;
 }
 
 .bossKilled:hover {
@@ -288,6 +335,37 @@ img {
  }
 
 @media (min-width: 768px) { 
+  .progress {
+    width: 50vw;
+    height: 3.5vw;
+    margin: auto;
+    margin-bottom:2.5vw;
+    border: 2px solid #570505;
+    background-color:#5e050541;
+  }
+
+  .progressNyAlotha {
+    border: 2px solid #360536;
+    background-color:#4b064b41;
+  }
+
+  .progress-bar {
+    background-color: #5e0505b2;
+  }
+
+  .progress-bar-NyAlotha {
+    background-color: #570757b2;
+  }
+
+  .progress-bar-count {
+    position: absolute;
+    right: 46.5vw;
+    padding-top: 1.5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
   .progressBosses-enter-active, .progressBosses-leave-active {
     max-height: 150vw;
     opacity: 1;
@@ -305,7 +383,7 @@ img {
      width: 60vw;
      font-size: 3vw;
      margin: auto;
-     text-align: left;
+     text-align: center;
   }
 
   .progress-box {
@@ -319,32 +397,55 @@ img {
 
   .progress-boss {
     margin: 1px;
-    height: 10vw;
-    max-width: 20%;
-    flex: 1 0 18%;
+    height: 7vw;
+    max-width: 10%;
+    flex: 1 0 10%;
     left: 0;
     margin: auto;
-    margin-top:3vw;
     padding: 1vw;
+  }
+  
+  .old-progress-boss {
+    height: 6vw;
+    max-width: 8.33%;
+    flex: 1 0 8.33%;
+    left: 0;
+    margin: auto;
   }
 
   .progress-boss:hover img {
     -opacity: 0.2;
-    height: 110%;
-    width: 110%;
-    margin-left: -0.5vw;
-    margin-top: -0.4vw;
+    -height: 110%;
+    -width: 110%;
+    -margin-left: -0.5vw;
+    -margin-top: -0.4vw;
+    height: 100%;
+    width: 100%;
+    margin-left: 0vw;
+    margin-top: 0vw;
   } 
   
 
   .outer-border {
-    height: 20.2%;
+    height: 4.2vw;
+    width: 4.2vw;
+    border: 2px solid;
+    background-color: #57050570;
   }
+  
+  .old-outer-border {
+    height: 4vw;
+    width: 4vw;
+    border: 2px solid;
+    background-color: #743074a1;
+  }
+
 
   img {
     width: 100%;
-    left: 0%;
-    top: -25%;
+    height: 100%;
+    -left: 0%;
+    -top: -25%;
   }
 
   .raid-name-icon.bi.bi-chevron-double-left:hover {
