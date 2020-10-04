@@ -124,16 +124,16 @@ export default {
       showRaidCastle: true,
       showRaidNy: false,
       bosses: [
-          { number: 1, status: 1, name: "Shriekwing", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762321656298602516/1.png' },
-          { number: 2, status: 1, name: "Altimor the Huntsman", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762323086002356248/2.png' },
-          { number: 3, status: 0, name: "Hungering Destroyer", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325825826848788/3.png' },
-          { number: 4, status: 1, name: "Artificer Xy'Mox", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325839584428083/4.png' },
-          { number: 5, status: 1, name: "Sun King's Salvation", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325849830719538/5.png' },
-          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325855711658044/6.png' },
-          { number: 7, status: 0, name: "The Council of Blood", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325866213539850/7.png' },
-          { number: 8, status: 3, name: "Sludgefist", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325878000451614/8.png' },
-          { number: 9, status: 0, name: "Stoneborne Generals", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325888049741904/10.png' },
-          { number: 10, status: 5, name: "Sire Denathrius", img: 'https://cdn.discordapp.com/attachments/669890392983863307/762325888049741904/10.png' }
+          { number: 1, status: 1, name: "Shriekwing", img: require('@/assets/bosses/CastleNathria/1.png') },
+          { number: 2, status: 1, name: "Altimor the Huntsman", img: require('@/assets/bosses/CastleNathria/2.png') },
+          { number: 3, status: 0, name: "Hungering Destroyer", img: require('@/assets/bosses/CastleNathria/3.png') },
+          { number: 4, status: 1, name: "Artificer Xy'Mox", img: require('@/assets/bosses/CastleNathria/4.png') },
+          { number: 5, status: 1, name: "Sun King's Salvation", img: require('@/assets/bosses/CastleNathria/5.png') },
+          { number: 6, status: 1, name: "Lady Inerva Darkvein", img: require('@/assets/bosses/CastleNathria/6.png') },
+          { number: 7, status: 0, name: "The Council of Blood", img: require('@/assets/bosses/CastleNathria/7.png') },
+          { number: 8, status: 3, name: "Sludgefist", img: require('@/assets/bosses/CastleNathria/8.png') },
+          { number: 9, status: 0, name: "Stoneborne Generals", img: require('@/assets/bosses/CastleNathria/10.png') },
+          { number: 10, status: 5, name: "Sire Denathrius", img: require('@/assets/bosses/CastleNathria/10.png') }
       ],
       bossesNy: [
           { number: 1, status: 3, name: "Wrathion", img: require('@/assets/bosses/Ny\'alotha/1.png') },
