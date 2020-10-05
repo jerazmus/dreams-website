@@ -35,9 +35,7 @@
 export default {
     name: 'About',
     data() {
-        return {
-            
-        }
+        return {}
     }
 }
 </script>
@@ -70,17 +68,11 @@ h2, h3 {
     padding: 20px;
 }
 
-.cutting-edge {
-    color: #478DFF;
-}
-
 @media (max-width: 767px) {
     .about {
-        border: none;
         width: 100vw;
         margin-top: 0;
         padding-top: 0;
-        text-align: justify;
         text-justify: inter-character;
     }
 }

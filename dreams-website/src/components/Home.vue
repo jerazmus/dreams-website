@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: 'About',
+    name: 'Home',
     data() {
         return {
             raiderio: "https://raider.io/guilds/eu/burning-legion/Dreams",
@@ -24,21 +24,19 @@ export default {
 
 <style scoped>
 
-h1 {
+h1, h2 {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     color: white;
     margin-top: 5px;
     text-shadow: black 1px 0 10px;
+}
+
+h1 {
     font-size: 2vw;
 }
 
 h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-    color: white;
-    margin-top: 5px;
-    text-shadow: black 1px 0 10px;
     font-size: 1vw;
 }
 

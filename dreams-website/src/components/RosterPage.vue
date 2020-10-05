@@ -35,9 +35,7 @@ import Recruitment from './Recruitment'
 export default {
   name: 'RosterPage',
   data() {
-    return {
-      cover: true,
-    }
+    return {}
   },
   methods: {
     closeApplyBox() {
@@ -60,12 +58,13 @@ export default {
 
 .cover {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-color: rgba(0,0,0,0.8);
-  z-index: 8;
+  z-index: 9;
   position: absolute;
   margin: 0;
   padding: 0;
+  top: 0;
   overflow-y: hidden;
 }
 
@@ -74,7 +73,7 @@ export default {
   position: absolute;
   border: 1px solid #478DFF;
   background-color: rgba(0,0,0,0.9);
-  z-index: 9;
+  z-index: 10;
   color: white;
   top: 30%;
   left: 21.1%;
@@ -133,7 +132,7 @@ button:focus {
 
   .cover {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     min-height: 100vh;
     background-color: rgba(0,0,0,0.8);
     z-index: 8;
