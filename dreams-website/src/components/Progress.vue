@@ -44,7 +44,7 @@
 
     <div class="progress-box no-border">
       <p @click="showRaidNy = !showRaidNy" class="raid-name">
-        <span :style= "[ userWidth < 768 ? showRaidNy ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" >
+        <span :style= "[ userWidth < 768 ? showRaidNy ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" class="text-shadow" >
           Poprzednie raidy
         </span>
         <span :style= "[showRaidNy == 1 ? {transform: 'rotate(-90deg)' } : {transform: 'rotate(0deg)' }]" class="raid-name-icon bi bi-chevron-double-left">
@@ -166,6 +166,10 @@ export default {
   padding-right: 1vw;
 }
 
+.text shadow {
+  text-shadow: black 2px 0 10px;
+}
+
 .progress {
   width: 80vw;
   height: 5vw;
@@ -196,6 +200,7 @@ export default {
   font-size: 2vw;
   font-weight: bold;
   color: #ffffff;
+  text-shadow: black 2px 0 10px;
 }
 
 .progressBosses-enter-active, .progressBosses-leave-active {
