@@ -83,6 +83,7 @@ export default {
   font-weight: 300;
   align-self: center;
   padding: 20px;
+  box-shadow: 0 0 1em #235ebe;
 }
 
 .officer {

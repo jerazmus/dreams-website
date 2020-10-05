@@ -8,9 +8,21 @@
         <span class="nickname"
         v-bind:style="{ color: getColor(member.class) }">
           {{ member.nick }}
-          <img :src="getRole(member.role)"
+          <img
+          :src="getRole(member.role)"
           :alt="member.role"
           class="role-img"/>
+          <a 
+          :href="getProfile(member.nick)"
+          :target="`_blank`">
+            <img src="../assets/home-icons/warcraft.png" class="profile-img"/>
+          </a>
+          <a
+          v-if="member.twitch" 
+          :href="getTwitch(member.twitchName)"
+          :target="`_blank`">
+            <img src="../assets/home-icons/twitch.png" class="twitch-img"/>
+          </a>
         </span>
       </div>
     </div>
@@ -23,26 +35,26 @@ export default {
   data() {
     return {
       roster: [
-        { nick: "Pandavani", class: "warrior", role: "tank" },
-        { nick: "Slasch", class: "dk", role: "tank" },
-        { nick: "Meodruid", class: "druid", role: "healer" },
-        { nick: "Szarlotka", class: "priest", role: "healer" },
-        { nick: "Hebin", class: "shaman", role: "healer" },
-        { nick: "Warflakes", class: "monk", role: "healer" },
-        { nick: "Xariyosu", class: "mage", role: "dps" },
-        { nick: "Arthres", class: "rogue", role: "dps" },
-        { nick: "Trupimek", class: "warrior", role: "dps" },
-        { nick: "Maanffredo", class: "dk", role: "dps" },
-        { nick: "Alarija", class: "hunter", role: "dps" },
-        { nick: "Cinnaeth", class: "mage", role: "dps" },
-        { nick: "Kozuchos", class: "paladin", role: "dps" },
-        { nick: "Frozeny", class: "rogue", role: "dps" },
-        { nick: "Tharkon", class: "warrior", role: "dps" },
-        { nick: "Quetrix", class: "mage", role: "dps" },
-        { nick: "Qatani", class: "priest", role: "dps" },
-        { nick: "Cichy", class: "rogue", role: "dps" },
-        { nick: "Antrack", class: "dh", role: "dps" },
-        { nick: "Daokmin", class: "hunter", role: "dps" },
+        { nick: "Pandavani",  class: "warrior", role: "tank",   twitch: false, twitchName: null },
+        { nick: "Slasch",     class: "dk",      role: "tank",   twitch: false, twitchName: null },
+        { nick: "Meodruid",   class: "druid",   role: "healer", twitch: true,  twitchName: "imeo_" },
+        { nick: "Szarlotka",  class: "priest",  role: "healer", twitch: false, twitchName: null },
+        { nick: "Hebin",      class: "shaman",  role: "healer", twitch: false, twitchName: null },
+        { nick: "Warflakes",  class: "monk",    role: "healer", twitch: false, twitchName: null },
+        { nick: "Xariyosu",   class: "mage",    role: "dps",    twitch: false, twitchName: null },
+        { nick: "Arthres",    class: "rogue",   role: "dps",    twitch: true,  twitchName: "amSubtlety" },
+        { nick: "Trupimek",   class: "warrior", role: "dps",    twitch: false, twitchName: null },
+        { nick: "Maanffredo", class: "dk",      role: "dps",    twitch: false, twitchName: null },
+        { nick: "Alarija",    class: "hunter",  role: "dps",    twitch: false, twitchName: null },
+        { nick: "Cinnaeth",   class: "mage",    role: "dps",    twitch: false, twitchName: null },
+        { nick: "Kozuchos",   class: "paladin", role: "dps",    twitch: false, twitchName: null },
+        { nick: "Frozeny",    class: "rogue",   role: "dps",    twitch: false, twitchName: null },
+        { nick: "Tharkon",    class: "warrior", role: "dps",    twitch: false, twitchName: null },
+        { nick: "Quetrix",    class: "mage",    role: "dps",    twitch: false, twitchName: null },
+        { nick: "Qatani",     class: "priest",  role: "dps",    twitch: false, twitchName: null },
+        { nick: "Cichy",      class: "rogue",   role: "dps",    twitch: false, twitchName: null },
+        { nick: "Antrack",    class: "dh",      role: "dps",    twitch: false, twitchName: null },
+        { nick: "Daokmin",    class: "hunter",  role: "dps",    twitch: false, twitchName: null },
       ]
     }
   },
@@ -76,7 +88,10 @@ export default {
       }
     },
     getProfile(nickname) {
-      return `https://raider.io/characters/eu/burning-legion/${nickname}`
+      return `https://worldofwarcraft.com/en-gb/character/eu/burning-legion/${nickname}`
+    },
+    getTwitch(nickname) {
+      return `https://twitch.tv/${nickname}`
     },
     getRole(role) {
       return require('@/assets/role/'+role+'.png')
@@ -138,6 +153,28 @@ export default {
   border: 2px double #235ebe;
   box-shadow: 0 0 1em #235ebe;
   border-radius: 50%;
+}
+
+.profile-img, .twitch-img {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  z-index: 5;
+  filter: grayscale(1);
+}
+
+.profile-img {
+  bottom: 5px;
+  right: 5px;
+}
+
+.profile-img:hover, .twitch-img:hover {
+  filter: grayscale(0);
+}
+
+.twitch-img {
+  bottom: 5px;
+  right: 30px;
 }
 
 @media (min-width: 576px) { 
