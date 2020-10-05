@@ -2,7 +2,7 @@
   <div class="home">
     <h1 class="guild">Dreams</h1>
     <h1>Dołącz do gildii i razem z nami wejdź w Shadowlands</h1>
-    <h2>Poszukujemy osób zarówno do progresowania contentu jak i do casualowego grania</h2>
+    <h2>Gildia dla osób zarówno do progresowania contentu jak i casualowego grania</h2>
     <a v-bind:target="`_blank`" v-bind:href="raiderio"><img src="@/assets/home-icons/raiderio.png"></a>
     <a v-bind:target="`_blank`" v-bind:href="wowprogress"><img src="@/assets/home-icons/wowprogress.png"></a>
     <a v-bind:target="`_blank`" v-bind:href="warcraftlogs"><img src="@/assets/home-icons/warcraftlogs.png"></a>
