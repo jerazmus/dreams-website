@@ -8,11 +8,11 @@
       </p>
       <transition name="progressBosses">
         <div  class="progress-bosses row" v-if="showRaidCastle == true">
-          <div class="progress-boss col-5 col-sm-5 col-md-2 col-lg-2 col-xl-2"  
+          <div class="progress-boss col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2"  
             v-for="boss in bosses" 
             :key="boss.number"  >
               <div 
-              :style= "[boss.status > 0 ? {'border-color': '#570505'} : {'border-color': 'grey'} ]"
+              :style= "[boss.status > 0 ? {'border-color': '#570505'} : {'border-color': 'grey', 'filter': 'grayscale(1)'} ]"
               class="outer-border">
               <img
                 class="bossKilled" v-if="boss.status !== 0" :src="boss.img" />
@@ -57,11 +57,11 @@
       <transition name="progressBosses">
         <div class="progress-bosses NyAlotha-box row" v-if="showRaidNy == true">
           <div class="old-raid-name">Ny'alotha, the Waking City</div>
-          <div class="old-progress-boss col-5 col-sm-5 col-md-1 col-lg-1 col-xl-1"  
+          <div class="old-progress-boss col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"  
             v-for="boss in bossesNy" 
             :key="boss.number"  >
               <div 
-              :style= "[boss.status > 0 ? {'border-color': '#360536'}  : {'border-color': 'grey'} ]"
+              :style= "[boss.status > 0 ? {'border-color': '#360536'}  : {'border-color': 'grey', 'filter': 'grayscale(1)'} ]"
               class="old-outer-border">
                 <img
                 class="bossKilled" v-if="boss.status !== 0" :src="boss.img" />
@@ -161,7 +161,42 @@ export default {
 
 <style scoped>
 
+.col-1, .col-md-1, .col-sm-1, .col-lg-1, .col-xl-1 {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
 
+.progress {
+    width: 80vw;
+    height: 5vw;
+    margin: auto;
+    margin-bottom: 4vw;
+    margin-top: 3vw;
+    border: 2px solid #570505;
+    background-color:#5e050541;
+  }
+
+  .progressNyAlotha {
+    border: 2px solid #360536;
+    background-color:#4b064b41;
+  }
+
+  .progress-bar {
+    background-color: #5e0505b2;
+  }
+
+  .progress-bar-NyAlotha {
+    background-color: #570757b2;
+  }
+
+  .progress-bar-count {
+    position: absolute;
+    right: 46.5vw;
+    padding-top: 2.3vw;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #ffffff;
+  }
 
 .progressBosses-enter-active, .progressBosses-leave-active {
   max-height: 150vw;
@@ -209,6 +244,7 @@ export default {
 p.raid-name {
   margin: auto;
   margin-left: 2vw;
+  text-shadow: black 2px 0 10px;
 }
 
 .old-raid-name {
@@ -216,6 +252,7 @@ p.raid-name {
   margin-bottom: 1vw;
   font-size: 3vw;
   color: #ffffff;
+  text-shadow: black 2px 0 10px;
 }
 
 .raid-name-icon {
@@ -229,14 +266,17 @@ p.raid-name {
 }
 
 .progress-boss {
-  margin: 1px;
-  height: 15vw;
   font-size: 20px;
   padding: 0;
   left: 8vw;
-  margin-top:5vw;
 }
 
+
+.old-progress-boss {
+  height: 6vw;
+  max-width: 8.3%;
+  flex: 1 0 8.3%;
+}
 
 .progress-boss-hover {
   font-size: 1.3vw;
@@ -257,9 +297,10 @@ p.raid-name {
 }
 
 
+
 img {
   height: 100%;
-  width: 80%;
+  width: 100%;
   opacity: 1;
   -position:absolute;
   -left: 10%;
@@ -267,7 +308,7 @@ img {
   -filter: grayscale(0.1);
   -filter: drop-shadow(0 0 5px #478DFF);
   transition: .3s linear;
-  vertical-align: 0%;
+  vertical-align: top;
 }
 
 .progress-boss:hover img {
@@ -279,26 +320,33 @@ img {
 }
 
 .outer-border {
-  -border-radius: 10%;
-  margin-top: 8.5%;
-  height: 18%;
-  z-index:0;
+  height: 6.5vw;
+  width: 6.5vw;
+  border: 2px solid;
+  background-color: #57050570;
+}
+
+.old-outer-border {
+  height: 6vw;
+  width: 6vw;
+  border: 2px solid;
+  background-color: #57050570;
 }
 
 .bossNotKilled {
-  filter: grayscale(1);
+  -filter: grayscale(1);
 }
 
 .bossNotKilledNathria {
-  filter: grayscale(1);
+  -filter: grayscale(1);
 }
 
 .bossNotKilledNathria:hover {
-  filter: drop-shadow(0 0 3px #570505) !important;
+  -filter: drop-shadow(0 0 3px #570505) !important;
 }
 
 .bossNotKilled:hover {
-  filter: drop-shadow(0 0 3px #570357) !important;
+  -filter: drop-shadow(0 0 3px #570357) !important;
 }
 
 .bossKilled:hover {
@@ -310,7 +358,7 @@ img {
 
  @media (max-width: 767px) { 
    .progress-boss {
-    height: 25vw;
+    -height: 15vw;
   }
 
   .raid-name-icon {
@@ -335,6 +383,11 @@ img {
  }
 
 @media (min-width: 768px) { 
+
+  .NyAlotha-box {
+    border-top: 1px solid #478DFF;
+  }
+
   .progress {
     width: 50vw;
     height: 3.5vw;
@@ -370,7 +423,7 @@ img {
     max-height: 150vw;
     opacity: 1;
     overflow: hidden;
-    transition: all 3s;
+    transition: all 4s;
   }
   .progressBosses-enter, .progressBosses-leave-to
   {
@@ -396,7 +449,6 @@ img {
   }
 
   .progress-boss {
-    margin: 1px;
     height: 7vw;
     max-width: 10%;
     flex: 1 0 10%;
@@ -407,10 +459,9 @@ img {
   
   .old-progress-boss {
     height: 6vw;
-    max-width: 8.33%;
-    flex: 1 0 8.33%;
+    max-width: 8.3%;
+    flex: 1 0 8.3%;
     left: 0;
-    margin: auto;
   }
 
   .progress-boss:hover img {
