@@ -111,8 +111,8 @@ export default {
 }
 
 .member {
-  border: 2px solid #478DFF;
-  box-shadow: 0 0 1em #478DFF;
+  border: 2px solid #235ebe;
+  box-shadow: 0 0 1em #235ebe;
   width: 265px;
   margin: 10px;
   float: left;
@@ -135,8 +135,8 @@ export default {
   z-index: 5;
   top: -10px;
   right: -10px;
-  border: 2px double #478DFF;
-  box-shadow: 0 0 1em #478DFF;
+  border: 2px double #235ebe;
+  box-shadow: 0 0 1em #235ebe;
   border-radius: 50%;
 }
 

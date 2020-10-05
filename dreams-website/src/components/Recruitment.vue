@@ -109,7 +109,7 @@ img {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 2px solid #478DFF;
+    border: 2px solid #235ebe;
     margin: auto 2px 5px 2px;
     padding: 2px;
 }
