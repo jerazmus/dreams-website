@@ -49,7 +49,16 @@ export default {
       this.$store.state.cover = false;
     }
   },
-  
+  mounted() {
+    const navbar = document.querySelector('#navbar');
+    window.onscroll = () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+  }
 }
 </script>
 
@@ -60,7 +69,6 @@ export default {
 }
 
 #navbar {
-  -background-color: rgba(13, 13, 13, 0.6);
   padding-top: 0.5vh;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
@@ -68,7 +76,12 @@ export default {
   position: sticky;
   top: 0;
   z-index: 10;
-  -border-bottom: 1px solid #478DFF;
+  transition: ease 1000ms;
+}
+
+.scrolled {
+  background-color: rgba(0,0,0,0.9) !important;
+  transition: ease 1000ms !important;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -78,7 +91,6 @@ export default {
 .navbar-light .navbar-toggler:focus,
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-  /*color: #b3d9ff;*/
   color: white;
 }
 
@@ -143,6 +155,12 @@ a:hover {
 @media (min-width: 768px) and (max-width: 1100px) {
   .navbar-light .navbar-nav .nav-link {
     font-size: 10px;
+  }
 }
+
+@media (max-width: 768px) {
+  #nav-collapse {
+    transition: ease 1s !important;
+  }
 }
 </style>

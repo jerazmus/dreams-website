@@ -11,7 +11,7 @@ export default {
   name: 'HomePage',
   data() {
     return {
-      msg: "oficialna strona gildi DreamS :)"
+      
     }
   },
   components: {
