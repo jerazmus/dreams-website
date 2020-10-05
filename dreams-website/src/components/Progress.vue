@@ -423,7 +423,7 @@ img {
     max-height: 150vw;
     opacity: 1;
     overflow: hidden;
-    transition: all 3s;
+    transition: all 4s;
   }
   .progressBosses-enter, .progressBosses-leave-to
   {
