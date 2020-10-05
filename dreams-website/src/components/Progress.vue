@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="progress-box">
+    <div class="progress-box no-border">
       <p @click="showRaidNy = !showRaidNy" class="raid-name">
         <span :style= "[ userWidth < 768 ? showRaidNy ? {color:'#478DFF'} : {color:'white'} : {color:'white'} ]" >
           Poprzednie raidy
@@ -167,36 +167,36 @@ export default {
 }
 
 .progress {
-    width: 80vw;
-    height: 5vw;
-    margin: auto;
-    margin-bottom: 4vw;
-    margin-top: 3vw;
-    border: 2px solid #570505;
-    background-color:#5e050541;
-  }
+  width: 80vw;
+  height: 5vw;
+  margin: auto;
+  margin-bottom: 4vw;
+  margin-top: 3vw;
+  border: 2px solid #570505;
+  background-color:#5e050541;
+}
 
-  .progressNyAlotha {
-    border: 2px solid #360536;
-    background-color:#4b064b41;
-  }
+.progressNyAlotha {
+  border: 2px solid #360536;
+  background-color:#4b064b41;
+}
 
-  .progress-bar {
-    background-color: #5e0505b2;
-  }
+.progress-bar {
+  background-color: #5e0505b2;
+}
 
-  .progress-bar-NyAlotha {
-    background-color: #570757b2;
-  }
+.progress-bar-NyAlotha {
+  background-color: #570757b2;
+}
 
-  .progress-bar-count {
-    position: absolute;
-    right: 46.5vw;
-    padding-top: 2.3vw;
-    font-size: 2vw;
-    font-weight: bold;
-    color: #ffffff;
-  }
+.progress-bar-count {
+  position: absolute;
+  right: 46.5vw;
+  padding-top: 2.3vw;
+  font-size: 2vw;
+  font-weight: bold;
+  color: #ffffff;
+}
 
 .progressBosses-enter-active, .progressBosses-leave-active {
   max-height: 150vw;
@@ -221,10 +221,14 @@ export default {
   font-weight: 300;
   margin: auto;
   cursor: default;
-  background-color: rgba(13, 13, 13, 0.7);
-  border: 1px solid #478DFF;
+  -background-color: rgba(13, 13, 13, 0.7);
+  border: 1px solid #57050570;
   margin-top:1vw;
   overflow: hidden;
+}
+
+.no-border {
+  border: none !important;
 }
 
 .castleNathria-box {
@@ -239,6 +243,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 100%;
   background-size: 100%;
+  border: 1px solid #570357;
 }
 
 p.raid-name {
@@ -385,7 +390,7 @@ img {
 @media (min-width: 768px) { 
 
   .NyAlotha-box {
-    border-top: 1px solid #478DFF;
+    -border-top: 1px solid #478DFF;
   }
 
   .progress {
