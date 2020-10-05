@@ -90,6 +90,7 @@ h2 {
     font-weight: 300;
     color: white;
     margin-top: 5px;
+    text-shadow: black 1px 0 10px;
 }
 
 .recruitment {
@@ -146,6 +147,7 @@ img {
     font-weight: 300;
     color: white;
     margin-top: 5px;
+    text-shadow: black 1px 0 10px;
 }
 
 .apply-button-box {
