@@ -8,9 +8,7 @@
 export default {
   name: 'Footer',
   data() {
-    return {
-      testVar: 1
-    }
+    return {}
   }
 }
   

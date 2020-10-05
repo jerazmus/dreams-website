@@ -27,9 +27,7 @@
 export default {
   name: 'Navbar',
   data() {
-    return {
-      
-    }
+    return {}
   },
   methods: {
     home() {
@@ -75,7 +73,7 @@ export default {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 8;
   transition: ease 1000ms;
 }
 
@@ -125,22 +123,15 @@ img {
   padding-bottom: 5px;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: white;
   margin-left: 12px;
 }
 
-a:hover {
-  text-decoration: none;
-  color: white;
-}
-
 @media (min-width: 768px) {
   .navbar-expand-md {
-    flex-flow: row nowrap;
     width: 60vw;
-    justify-content: center;
   }
 
   .navbar-expand-md .navbar-collapse {

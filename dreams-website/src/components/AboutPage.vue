@@ -8,11 +8,9 @@
 import About from "./About"
 
 export default {
-  name: 'Home',
+  name: 'AboutPage',
   data() {
-    return {
-      msg: "about"
-    }
+    return {}
   },
   components: {
     About

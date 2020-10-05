@@ -10,8 +10,7 @@ import Progress from "./Progress"
 export default {
   name: 'ProgressPage',
   data() {
-    return {
-    }
+    return {}
   },
   components: {
     Progress

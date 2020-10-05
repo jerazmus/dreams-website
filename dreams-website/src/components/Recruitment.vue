@@ -2,7 +2,8 @@
   <div class="recruitment">
     <h2>REKRUTACJA</h2>
     <div class="classes">   
-        <img :src="getClass(className.class)"
+        <img
+        :src="getClass(className.class)"
         v-for="className in classes" 
         :id="className.class"
         :key="className.class"
@@ -13,7 +14,8 @@
         v-for="className in requiredClasses"
         :key="className.class"
         :target="className.class">
-            <img :src="getSpec(className.class, specName)"
+            <img
+            :src="getSpec(className.class, specName)"
             v-for="specName in className.spec"
             :key="specName" :alt="specName"
             class="spec-img"/>
@@ -88,16 +90,15 @@ h2 {
     font-weight: 300;
     color: white;
     margin-top: 5px;
+    text-shadow: black 1px 0 10px;
 }
 
 .recruitment {
     text-align: center;
-    -border: 1px solid #478DFF;
     width: 56.75vw;
     height: auto;
     margin: 20px auto 0px;
     color: white;
-    -background-color: rgba(0,0,0,0.3);
     padding-bottom: 20px;
 }
 
@@ -109,7 +110,7 @@ img {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 2px solid #478DFF;
+    border: 2px solid #235ebe;
     margin: auto 2px 5px 2px;
     padding: 2px;
 }
@@ -146,6 +147,7 @@ img {
     font-weight: 300;
     color: white;
     margin-top: 5px;
+    text-shadow: black 1px 0 10px;
 }
 
 .apply-button-box {
@@ -154,7 +156,6 @@ img {
 
 .apply-button {
     background-color: transparent;
-    -border: 1px solid #478DFF;
     border: none;
     color: white;
     display: inline-block;
@@ -164,7 +165,6 @@ img {
 }
 
 button:hover {
-    -border: 1px solid transparent;
     color: #478DFF;
     transition: 0.5s ease;
 }

@@ -10,9 +10,7 @@ import Home from "./Home"
 export default {
   name: 'HomePage',
   data() {
-    return {
-      
-    }
+    return {}
   },
   components: {
     Home

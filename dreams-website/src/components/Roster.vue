@@ -22,7 +22,6 @@ export default {
   name: 'Roster',
   data() {
     return {
-      msg: "ROSTER",
       roster: [
         { nick: "Pandavani", class: "warrior", role: "tank" },
         { nick: "Slasch", class: "dk", role: "tank" },
@@ -93,12 +92,10 @@ export default {
 }
 
 .roster {
-  -border: 1px solid #478DFF;
   width: 60vw;
   height: auto;
   margin: 20px auto 0px;
   color: white;
-  -background-color: rgba(0,0,0,0.3);
   padding-bottom: 20px;
   font-family: 'Raleway', sans-serif;
   padding: 20px;
@@ -114,7 +111,8 @@ export default {
 }
 
 .member {
-  border: 1px solid #478DFF;
+  border: 2px solid #235ebe;
+  box-shadow: 0 0 1em #235ebe;
   width: 265px;
   margin: 10px;
   float: left;
@@ -137,7 +135,8 @@ export default {
   z-index: 5;
   top: -10px;
   right: -10px;
-  border: 1px double #478DFF;
+  border: 2px double #235ebe;
+  box-shadow: 0 0 1em #235ebe;
   border-radius: 50%;
 }
 
