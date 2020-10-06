@@ -7,8 +7,7 @@
         :key="member.nick"
       >
         <img :src="member.avatar" />
-        <b-skeleton-img></b-skeleton-img>
-        <span class="nickname" v-bind:style="{ color: getColor(member.class) }">
+        <span class="nickname" v-bind:style="{ color: colors[member.class] }">
           {{ member.nick }}
           <img
             :src="getRole(member.role)"
@@ -38,31 +37,17 @@ export default {
     return {
       roster: [
         {
-          nick: "Pandavani",
-          class: "warrior",
+          nick: "Antrack",
+          class: "dh",
           role: "tank",
           twitchName: null,
           avatar: null,
         },
         {
-          nick: "Slåsch",
-          class: "dk",
+          nick: "Meomonk",
+          class: "monk",
           role: "tank",
-          twitchName: null,
-          avatar: null,
-        },
-        {
-          nick: "Meodruid",
-          class: "druid",
-          role: "healer",
           twitchName: "imeo_",
-          avatar: null,
-        },
-        {
-          nick: "Szarlotka",
-          class: "priest",
-          role: "healer",
-          twitchName: null,
           avatar: null,
         },
         {
@@ -75,6 +60,20 @@ export default {
         {
           nick: "Warflakes",
           class: "monk",
+          role: "healer",
+          twitchName: null,
+          avatar: null,
+        },
+        {
+          nick: "Valais",
+          class: "shaman",
+          role: "healer",
+          twitchName: null,
+          avatar: null,
+        },
+        {
+          nick: "Poldemar",
+          class: "druid",
           role: "healer",
           twitchName: null,
           avatar: null,
@@ -108,8 +107,8 @@ export default {
           avatar: null,
         },
         {
-          nick: "Alarija",
-          class: "hunter",
+          nick: "Minight",
+          class: "warlock",
           role: "dps",
           twitchName: null,
           avatar: null,
@@ -122,8 +121,8 @@ export default {
           avatar: null,
         },
         {
-          nick: "Kozuchos",
-          class: "paladin",
+          nick: "Kurjo",
+          class: "dk",
           role: "dps",
           twitchName: null,
           avatar: null,
@@ -136,15 +135,15 @@ export default {
           avatar: null,
         },
         {
-          nick: "Tharkon",
-          class: "warrior",
+          nick: "Kozuh",
+          class: "priest",
           role: "dps",
           twitchName: null,
           avatar: null,
         },
         {
-          nick: "Quetrix",
-          class: "mage",
+          nick: "Ama",
+          class: "hunter",
           role: "dps",
           twitchName: null,
           avatar: null,
@@ -157,58 +156,44 @@ export default {
           avatar: null,
         },
         {
-          nick: "Cïchy",
-          class: "rogue",
-          role: "dps",
-          twitchName: null,
-          avatar: null,
-        },
-        {
-          nick: "Antrack",
-          class: "dh",
-          role: "dps",
-          twitchName: null,
-          avatar: null,
-        },
-        {
           nick: "Daokmin",
           class: "hunter",
           role: "dps",
           twitchName: null,
           avatar: null,
         },
+        {
+          nick: "Tharkon",
+          class: "warrior",
+          role: "dps",
+          twitchName: null,
+          avatar: null,
+        },
+        {
+          nick: "Cïchy",
+          class: "rogue",
+          role: "dps",
+          twitchName: null,
+          avatar: null,
+        }
       ],
+      colors: {
+        monk: "#00FF96",
+        dk: "#C41F3B",
+        dh: "#A330C9",
+        druid: "#FF7D0A",
+        priest: "#FFFFFF",
+        shaman: "#0070DE",
+        mage: "#40C7EB",
+        warlock: "#8787ED",
+        hunter: "#A9D271",
+        rogue: "#FFF569",
+        paladin: "#F58CBA",
+        warrior: "#C79C6E"
+      }
     };
   },
   methods: {
-    getColor(className) {
-      switch (className) {
-        case "monk":
-          return "#00FF96";
-        case "dk":
-          return "#C41F3B";
-        case "dh":
-          return "#A330C9";
-        case "druid":
-          return "#FF7D0A";
-        case "priest":
-          return "#FFFFFF";
-        case "shaman":
-          return "#0070DE";
-        case "mage":
-          return "#40C7EB	";
-        case "warlock":
-          return "#8787ED";
-        case "hunter":
-          return "#A9D271";
-        case "rogue":
-          return "#FFF569";
-        case "paladin":
-          return "#F58CBA";
-        case "warrior":
-          return "#C79C6E";
-      }
-    },
     getProfile(nickname) {
       return `https://worldofwarcraft.com/en-gb/character/eu/burning-legion/${nickname}`;
     },
