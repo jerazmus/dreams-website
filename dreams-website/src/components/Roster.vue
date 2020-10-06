@@ -221,16 +221,13 @@ export default {
     async getAvatar(nickname) {
       const proxyUrl = `https://cors-anywhere.herokuapp.com/`
       const requestUrl = `https://eu.api.blizzard.com/profile/wow/character/burning-legion/${nickname.toLowerCase()}/character-media?namespace=profile-eu&locale=en_EU&access_token=USfBHMn9whjVkW4Qeb721JM6sqoURtk83o`;
-      //let avatar = await fetch(proxyUrl + requestUrl)
-      //  .then(response => response.json())
-      //  .then(data => {return data.avatar_url})
-      //return avatar;
-      const response = await fetch(proxyUrl + requestUrl);
-      const data = await response.json();
-      const avatar = await data.avatar_url;
+      let avatar;
+      await fetch(proxyUrl + requestUrl)
+        .then(response => response.json())
+        .then(data => avatar = data.avatar_url);
       console.log(avatar);
       return avatar;
-    }
+    },
   },
 };
 </script>
