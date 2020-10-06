@@ -6,9 +6,9 @@
         v-for="member in roster"
         :key="member.nick"
       >
-        <img src="../assets/portrait.png" />
+        <img :src="getAvatar(member.nick)" />
         <span class="nickname" v-bind:style="{ color: getColor(member.class) }">
-          {{ member.nick }}
+          {{ member.nick }} {{ getAvatar(member.nick) }}
           <img
             :src="getRole(member.role)"
             :alt="member.role"
@@ -26,6 +26,7 @@
           </a>
         </span>
       </div>
+      <img :src="getAvatar(`meomonk`)" />
     </div>
   </div>
 </template>
@@ -44,7 +45,7 @@ export default {
           twitchName: null,
         },
         {
-          nick: "Slasch",
+          nick: "Slåsch",
           class: "dk",
           role: "tank",
           twitch: false,
@@ -65,7 +66,7 @@ export default {
           twitchName: null,
         },
         {
-          nick: "Hebin",
+          nick: "Hebín",
           class: "shaman",
           role: "healer",
           twitch: false,
@@ -79,7 +80,7 @@ export default {
           twitchName: null,
         },
         {
-          nick: "Xariyosu",
+          nick: "Xáriyosu",
           class: "mage",
           role: "dps",
           twitch: false,
@@ -100,7 +101,7 @@ export default {
           twitchName: null,
         },
         {
-          nick: "Maanffredo",
+          nick: "Maanfrredo",
           class: "dk",
           role: "dps",
           twitch: false,
@@ -156,7 +157,7 @@ export default {
           twitchName: null,
         },
         {
-          nick: "Cichy",
+          nick: "Cïchy",
           class: "rogue",
           role: "dps",
           twitch: false,
@@ -217,6 +218,19 @@ export default {
     getRole(role) {
       return require("@/assets/role/" + role + ".png");
     },
+    async getAvatar(nickname) {
+      const proxyUrl = `https://cors-anywhere.herokuapp.com/`
+      const requestUrl = `https://eu.api.blizzard.com/profile/wow/character/burning-legion/${nickname.toLowerCase()}/character-media?namespace=profile-eu&locale=en_EU&access_token=USfBHMn9whjVkW4Qeb721JM6sqoURtk83o`;
+      //let avatar = await fetch(proxyUrl + requestUrl)
+      //  .then(response => response.json())
+      //  .then(data => {return data.avatar_url})
+      //return avatar;
+      const response = await fetch(proxyUrl + requestUrl);
+      const data = await response.json();
+      const avatar = await data.avatar_url;
+      console.log(avatar);
+      return avatar;
+    }
   },
 };
 </script>
