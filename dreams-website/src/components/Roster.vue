@@ -6,9 +6,10 @@
         v-for="member in roster"
         :key="member.nick"
       >
-        <img :src="getAvatar(member.nick)" />
+        <img :src="member.avatar" />
+        <b-skeleton-img></b-skeleton-img>
         <span class="nickname" v-bind:style="{ color: getColor(member.class) }">
-          {{ member.nick }} {{ getAvatar(member.nick) }}
+          {{ member.nick }}
           <img
             :src="getRole(member.role)"
             :alt="member.role"
@@ -18,7 +19,7 @@
             <img src="../assets/home-icons/warcraft.png" class="profile-img" />
           </a>
           <a
-            v-if="member.twitch"
+            v-if="member.twitchName != null"
             :href="getTwitch(member.twitchName)"
             :target="`_blank`"
           >
@@ -26,7 +27,6 @@
           </a>
         </span>
       </div>
-      <img :src="getAvatar(`meomonk`)" />
     </div>
   </div>
 </template>
@@ -41,141 +41,141 @@ export default {
           nick: "Pandavani",
           class: "warrior",
           role: "tank",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Slåsch",
           class: "dk",
           role: "tank",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Meodruid",
           class: "druid",
           role: "healer",
-          twitch: true,
           twitchName: "imeo_",
+          avatar: null,
         },
         {
           nick: "Szarlotka",
           class: "priest",
           role: "healer",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Hebín",
           class: "shaman",
           role: "healer",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Warflakes",
           class: "monk",
           role: "healer",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Xáriyosu",
           class: "mage",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Arthres",
           class: "rogue",
           role: "dps",
-          twitch: true,
           twitchName: "amSubtlety",
+          avatar: null,
         },
         {
           nick: "Trupimek",
           class: "warrior",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Maanfrredo",
           class: "dk",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Alarija",
           class: "hunter",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Cinnaeth",
           class: "mage",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Kozuchos",
           class: "paladin",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Frozeny",
           class: "rogue",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Tharkon",
           class: "warrior",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Quetrix",
           class: "mage",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Qatani",
           class: "priest",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Cïchy",
           class: "rogue",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Antrack",
           class: "dh",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
         {
           nick: "Daokmin",
           class: "hunter",
           role: "dps",
-          twitch: false,
           twitchName: null,
+          avatar: null,
         },
       ],
     };
@@ -219,16 +219,22 @@ export default {
       return require("@/assets/role/" + role + ".png");
     },
     async getAvatar(nickname) {
-      const proxyUrl = `https://cors-anywhere.herokuapp.com/`
+      const proxyUrl = `https://cors-anywhere.herokuapp.com/`;
       const requestUrl = `https://eu.api.blizzard.com/profile/wow/character/burning-legion/${nickname.toLowerCase()}/character-media?namespace=profile-eu&locale=en_EU&access_token=USfBHMn9whjVkW4Qeb721JM6sqoURtk83o`;
-      let avatar;
-      await fetch(proxyUrl + requestUrl)
-        .then(response => response.json())
-        .then(data => avatar = data.avatar_url);
-      console.log(avatar);
-      return avatar;
+      return fetch(proxyUrl + requestUrl)
+        .then((response) => response.json())
+        .then((data) => data.avatar_url);
+    },
+    async setAvatar(nickname) {
+      const avatar = await this.getAvatar(nickname);
+      this.roster
+        .filter((member) => member.nick === nickname)
+        .forEach((member) => console.log((member.avatar = avatar)));
     },
   },
+  mounted() {
+    this.roster.forEach((member) => this.setAvatar(member.nick));
+  }
 };
 </script>
 
