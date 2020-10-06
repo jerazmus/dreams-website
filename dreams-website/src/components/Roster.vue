@@ -229,7 +229,7 @@ export default {
       const avatar = await this.getAvatar(nickname);
       this.roster
         .filter((member) => member.nick === nickname)
-        .forEach((member) => console.log((member.avatar = avatar)));
+        .forEach((member) => member.avatar = avatar);
     },
   },
   mounted() {
