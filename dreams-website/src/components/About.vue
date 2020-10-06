@@ -47,7 +47,6 @@ export default {
 }
 
 h2, h3 {
-    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     color: white;
     margin-top: 5px;
@@ -63,7 +62,6 @@ h2, h3 {
     margin: 20px auto 0px;
     color: white;
     padding-bottom: 20px;
-    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     padding: 20px;
 }

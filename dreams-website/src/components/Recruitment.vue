@@ -86,7 +86,6 @@ export default {
 <style scoped>
 
 h2 {
-    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     color: white;
     margin-top: 5px;
@@ -143,7 +142,6 @@ img {
 }
 
 .apply {
-    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     color: white;
     margin-top: 5px;

@@ -112,7 +112,6 @@ export default {
   margin: 20px auto 0px;
   color: white;
   padding-bottom: 20px;
-  font-family: 'Raleway', sans-serif;
   padding: 20px;
 }
 

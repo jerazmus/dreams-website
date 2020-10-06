@@ -68,7 +68,6 @@ export default {
 
 #navbar {
   padding-top: 0.5vh;
-  font-family: 'Raleway', sans-serif;
   font-weight: 300;
   align-items: center;
   position: sticky;

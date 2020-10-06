@@ -79,7 +79,6 @@ export default {
   left: 21.1%;
   width: 57.75vw;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
   font-weight: 300;
   align-self: center;
   padding: 20px;
@@ -126,7 +125,6 @@ button:focus {
     left: 11%;
     width: 80vw;
     text-align: center;
-    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     padding: 20px;
   }

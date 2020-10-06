@@ -29,6 +29,7 @@ body {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  font-family: 'Raleway', sans-serif !important;
 }
 
 body::-webkit-scrollbar {
