@@ -5,19 +5,17 @@
 </template>
 
 <script>
-import About from "./About"
+import About from "./About";
 
 export default {
-  name: 'AboutPage',
+  name: "AboutPage",
   data() {
-    return {}
+    return {};
   },
   components: {
-    About
-  }
-  
-}
+    About,
+  },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

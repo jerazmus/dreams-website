@@ -25,9 +25,9 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: "Navbar",
   data() {
-    return {}
+    return {};
   },
   methods: {
     home() {
@@ -35,33 +35,32 @@ export default {
       this.$store.state.cover = false;
     },
     team() {
-      this.$router.push("/roster")
+      this.$router.push("/roster");
       this.$store.state.cover = false;
     },
     about() {
-      this.$router.push("/about")
+      this.$router.push("/about");
       this.$store.state.cover = false;
     },
     progress() {
-      this.$router.push("/progress")
+      this.$router.push("/progress");
       this.$store.state.cover = false;
-    }
+    },
   },
   mounted() {
-    const navbar = document.querySelector('#navbar');
+    const navbar = document.querySelector("#navbar");
     window.onscroll = () => {
       if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+        navbar.classList.add("scrolled");
       } else {
-        navbar.classList.remove('scrolled');
+        navbar.classList.remove("scrolled");
       }
     };
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
-
 .navbar {
   margin: auto;
 }
@@ -77,7 +76,7 @@ export default {
 }
 
 .scrolled {
-  background-color: rgba(0,0,0,0.9) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
   transition: ease 1000ms !important;
 }
 
@@ -111,7 +110,7 @@ export default {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #478DFF;
+  color: #478dff;
 }
 
 img {
@@ -122,7 +121,8 @@ img {
   padding-bottom: 5px;
 }
 
-a, a:hover {
+a,
+a:hover {
   text-decoration: none;
   color: white;
   margin-left: 12px;

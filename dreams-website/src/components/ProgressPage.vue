@@ -5,19 +5,17 @@
 </template>
 
 <script>
-import Progress from "./Progress"
+import Progress from "./Progress";
 
 export default {
-  name: 'ProgressPage',
+  name: "ProgressPage",
   data() {
-    return {}
+    return {};
   },
   components: {
-    Progress
-  }
-  
-}
+    Progress,
+  },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
