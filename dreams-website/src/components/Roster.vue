@@ -1,27 +1,28 @@
 <template>
   <div class="roster col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <div class="members">
-      <div class="member col-sm-12 col-md-6 col-lg-6 col-xl-3" 
-      v-for="member in roster"
-      :key="member.nick">
+      <div
+        class="member col-sm-12 col-md-6 col-lg-6 col-xl-3"
+        v-for="member in roster"
+        :key="member.nick"
+      >
         <img src="../assets/portrait.png" />
-        <span class="nickname"
-        v-bind:style="{ color: getColor(member.class) }">
+        <span class="nickname" v-bind:style="{ color: getColor(member.class) }">
           {{ member.nick }}
           <img
-          :src="getRole(member.role)"
-          :alt="member.role"
-          class="role-img"/>
-          <a 
-          :href="getProfile(member.nick)"
-          :target="`_blank`">
-            <img src="../assets/home-icons/warcraft.png" class="profile-img"/>
+            :src="getRole(member.role)"
+            :alt="member.role"
+            class="role-img"
+          />
+          <a :href="getProfile(member.nick)" :target="`_blank`">
+            <img src="../assets/home-icons/warcraft.png" class="profile-img" />
           </a>
           <a
-          v-if="member.twitch" 
-          :href="getTwitch(member.twitchName)"
-          :target="`_blank`">
-            <img src="../assets/home-icons/twitch.png" class="twitch-img"/>
+            v-if="member.twitch"
+            :href="getTwitch(member.twitchName)"
+            :target="`_blank`"
+          >
+            <img src="../assets/home-icons/twitch.png" class="twitch-img" />
           </a>
         </span>
       </div>
@@ -31,32 +32,152 @@
 
 <script>
 export default {
-  name: 'Roster',
+  name: "Roster",
   data() {
     return {
       roster: [
-        { nick: "Pandavani",  class: "warrior", role: "tank",   twitch: false, twitchName: null },
-        { nick: "Slasch",     class: "dk",      role: "tank",   twitch: false, twitchName: null },
-        { nick: "Meodruid",   class: "druid",   role: "healer", twitch: true,  twitchName: "imeo_" },
-        { nick: "Szarlotka",  class: "priest",  role: "healer", twitch: false, twitchName: null },
-        { nick: "Hebin",      class: "shaman",  role: "healer", twitch: false, twitchName: null },
-        { nick: "Warflakes",  class: "monk",    role: "healer", twitch: false, twitchName: null },
-        { nick: "Xariyosu",   class: "mage",    role: "dps",    twitch: false, twitchName: null },
-        { nick: "Arthres",    class: "rogue",   role: "dps",    twitch: true,  twitchName: "amSubtlety" },
-        { nick: "Trupimek",   class: "warrior", role: "dps",    twitch: false, twitchName: null },
-        { nick: "Maanffredo", class: "dk",      role: "dps",    twitch: false, twitchName: null },
-        { nick: "Alarija",    class: "hunter",  role: "dps",    twitch: false, twitchName: null },
-        { nick: "Cinnaeth",   class: "mage",    role: "dps",    twitch: false, twitchName: null },
-        { nick: "Kozuchos",   class: "paladin", role: "dps",    twitch: false, twitchName: null },
-        { nick: "Frozeny",    class: "rogue",   role: "dps",    twitch: false, twitchName: null },
-        { nick: "Tharkon",    class: "warrior", role: "dps",    twitch: false, twitchName: null },
-        { nick: "Quetrix",    class: "mage",    role: "dps",    twitch: false, twitchName: null },
-        { nick: "Qatani",     class: "priest",  role: "dps",    twitch: false, twitchName: null },
-        { nick: "Cichy",      class: "rogue",   role: "dps",    twitch: false, twitchName: null },
-        { nick: "Antrack",    class: "dh",      role: "dps",    twitch: false, twitchName: null },
-        { nick: "Daokmin",    class: "hunter",  role: "dps",    twitch: false, twitchName: null },
-      ]
-    }
+        {
+          nick: "Pandavani",
+          class: "warrior",
+          role: "tank",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Slasch",
+          class: "dk",
+          role: "tank",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Meodruid",
+          class: "druid",
+          role: "healer",
+          twitch: true,
+          twitchName: "imeo_",
+        },
+        {
+          nick: "Szarlotka",
+          class: "priest",
+          role: "healer",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Hebin",
+          class: "shaman",
+          role: "healer",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Warflakes",
+          class: "monk",
+          role: "healer",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Xariyosu",
+          class: "mage",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Arthres",
+          class: "rogue",
+          role: "dps",
+          twitch: true,
+          twitchName: "amSubtlety",
+        },
+        {
+          nick: "Trupimek",
+          class: "warrior",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Maanffredo",
+          class: "dk",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Alarija",
+          class: "hunter",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Cinnaeth",
+          class: "mage",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Kozuchos",
+          class: "paladin",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Frozeny",
+          class: "rogue",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Tharkon",
+          class: "warrior",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Quetrix",
+          class: "mage",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Qatani",
+          class: "priest",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Cichy",
+          class: "rogue",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Antrack",
+          class: "dh",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+        {
+          nick: "Daokmin",
+          class: "hunter",
+          role: "dps",
+          twitch: false,
+          twitchName: null,
+        },
+      ],
+    };
   },
   methods: {
     getColor(className) {
@@ -88,20 +209,19 @@ export default {
       }
     },
     getProfile(nickname) {
-      return `https://worldofwarcraft.com/en-gb/character/eu/burning-legion/${nickname}`
+      return `https://worldofwarcraft.com/en-gb/character/eu/burning-legion/${nickname}`;
     },
     getTwitch(nickname) {
-      return `https://twitch.tv/${nickname}`
+      return `https://twitch.tv/${nickname}`;
     },
     getRole(role) {
-      return require('@/assets/role/'+role+'.png')
-    }
-  }, 
-}
+      return require("@/assets/role/" + role + ".png");
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 .title {
   margin-left: 2vw;
 }
@@ -130,7 +250,7 @@ export default {
   width: 265px;
   margin: 10px;
   float: left;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 0;
 }
 
@@ -154,7 +274,8 @@ export default {
   border-radius: 50%;
 }
 
-.profile-img, .twitch-img {
+.profile-img,
+.twitch-img {
   width: 22px;
   height: 22px;
   position: absolute;
@@ -167,7 +288,8 @@ export default {
   right: 5px;
 }
 
-.profile-img:hover, .twitch-img:hover {
+.profile-img:hover,
+.twitch-img:hover {
   filter: grayscale(0);
 }
 
@@ -176,14 +298,14 @@ export default {
   right: 30px;
 }
 
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
   .member {
     max-width: 50%;
     flex: 1 0 48%;
   }
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
   .roster {
     border: none;
     width: 100vw;
@@ -191,7 +313,7 @@ export default {
   }
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .member {
     max-width: 25%;
     flex: 1 0 23%;
@@ -203,6 +325,4 @@ export default {
     width: 80vw;
   }
 }
-
-
 </style>
