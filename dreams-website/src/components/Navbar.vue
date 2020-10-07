@@ -2,9 +2,7 @@
   <div id="navbar">
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
-        <a href="#" class="logo">
-          <img src="@/assets/logo/dreams-name.png" id="logo" @click.prevent="collapse">
-        </a>
+        <img src="@/assets/logo/dreams-name.png" id="logo">
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
@@ -56,7 +54,7 @@ export default {
       button.classList.remove("collapsed");
       button.setAttribute("aria-expanded", "false");
       collapse.classList.remove("show");
-      //test
+      collapse.style.display = "none";
     }
   },
   mounted() {
@@ -93,7 +91,7 @@ export default {
 }
 
 .scrolled {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: rgba(0, 0, 0, 1);
   transition: ease 500ms !important;
 }
 
@@ -130,18 +128,16 @@ export default {
   color: #478dff;
 }
 
-img {
-  width: 48px;
-  height: 48px;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 5px;
-}
-
 #logo {
   width: 216px;
   height: 120px;
   transition: 500ms ease;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
 }
 
 a,
@@ -172,8 +168,5 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  #nav-collapse {
-    transition: ease 0.5s !important;
-  }
 }
 </style>
