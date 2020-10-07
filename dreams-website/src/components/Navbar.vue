@@ -172,7 +172,7 @@ a:hover {
 
 @media (max-width: 768px) {
   #nav-collapse {
-    transition: ease 1s !important;
+    transition: ease 0.5s !important;
   }
 }
 </style>
