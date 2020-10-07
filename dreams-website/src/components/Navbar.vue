@@ -56,6 +56,7 @@ export default {
       button.classList.remove("collapsed");
       button.setAttribute("aria-expanded", "false");
       collapse.classList.remove("show");
+      //test
     }
   },
   mounted() {
