@@ -56,6 +56,7 @@ export default {
       button.classList.remove("collapsed");
       button.setAttribute("aria-expanded", "false");
       collapse.classList.remove("show");
+      //test
     }
   },
   mounted() {
@@ -172,7 +173,7 @@ a:hover {
 
 @media (max-width: 768px) {
   #nav-collapse {
-    transition: ease 1s !important;
+    transition: ease 0.5s !important;
   }
 }
 </style>
