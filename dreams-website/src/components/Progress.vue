@@ -172,10 +172,9 @@ export default {
 
 .progress {
   width: 80vw;
-  height: 5vw;
+  height: 8vw;
   margin: auto;
   margin-bottom: 4vw;
-  margin-top: 3vw;
   border: 2px solid #570505;
   background-color:#5e050541;
 }
@@ -195,9 +194,9 @@ export default {
 
 .progress-bar-count {
   position: absolute;
-  right: 46.5vw;
-  padding-top: 2.3vw;
-  font-size: 2vw;
+  right: 45vw;
+  padding-top: 3.5vw;
+  font-size: 3vw;
   font-weight: bold;
   color: #ffffff;
   text-shadow: black 2px 0 10px;
@@ -248,7 +247,6 @@ export default {
   background-repeat: no-repeat;
   background-position: 100%;
   background-size: 100%;
-  border: 1px solid #570357;
 }
 
 p.raid-name {
@@ -260,7 +258,6 @@ p.raid-name {
 .old-raid-name {
   width: 100%;
   margin-bottom: 1vw;
-  font-size: 3vw;
   color: #ffffff;
   text-shadow: black 2px 0 10px;
 }
@@ -276,16 +273,21 @@ p.raid-name {
 }
 
 .progress-boss {
+  max-width: 20%;
+  flex: 1 0 20%;
   font-size: 20px;
   padding: 0;
-  left: 8vw;
+  left: 3vw;
+  margin-bottom: 3vw;
 }
 
 
 .old-progress-boss {
   height: 6vw;
-  max-width: 8.3%;
-  flex: 1 0 8.3%;
+  max-width: 16.6%;
+  flex: 1 0 16.6%;
+  left: 1vw;
+  margin-bottom: 10vw;
 }
 
 .progress-boss-hover {
@@ -330,15 +332,15 @@ img {
 }
 
 .outer-border {
-  height: 6.5vw;
-  width: 6.5vw;
+  height: 14vw;
+  width: 14vw;
   border: 2px solid;
   background-color: #57050570;
 }
 
 .old-outer-border {
-  height: 6vw;
-  width: 6vw;
+  height: 13vw;
+  width: 13vw;
   border: 2px solid;
   background-color: #57050570;
 }
@@ -395,7 +397,7 @@ img {
 @media (min-width: 768px) { 
 
   .NyAlotha-box {
-    -border-top: 1px solid #478DFF;
+    border: 1px solid #570357;
   }
 
   .progress {
@@ -472,6 +474,7 @@ img {
     max-width: 8.3%;
     flex: 1 0 8.3%;
     left: 0;
+    margin-bottom:0vw;
   }
 
   .progress-boss:hover img {
