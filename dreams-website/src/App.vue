@@ -30,6 +30,7 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   font-family: 'Raleway', sans-serif !important;
+  transition: 500ms ease;
 }
 
 body::-webkit-scrollbar {

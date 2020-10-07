@@ -3,8 +3,7 @@
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
         <a href="#" class="logo">
-          <!-- <img src="../../public/dreams.png"> -->
-          DREAMS
+          <img src="@/assets/logo/dreams-name.png" id="logo" @click.prevent="collapse">
         </a>
       </b-navbar-brand>
 
@@ -33,27 +32,44 @@ export default {
     home() {
       this.$router.push("/");
       this.$store.state.cover = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     team() {
       this.$router.push("/roster");
       this.$store.state.cover = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     about() {
       this.$router.push("/about");
       this.$store.state.cover = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     progress() {
       this.$router.push("/progress");
       this.$store.state.cover = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
+    collapse() {
+      const button = document.querySelector("button");
+      const collapse = document.querySelector("#nav-collapse");
+      button.classList.remove("not-collapsed");
+      button.classList.remove("collapsed");
+      button.setAttribute("aria-expanded", "false");
+      collapse.classList.remove("show");
+    }
   },
   mounted() {
     const navbar = document.querySelector("#navbar");
+    const logo = document.querySelector("#logo");
     window.onscroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY >= 1) {
         navbar.classList.add("scrolled");
+        logo.style.height="60px";
+        logo.style.width="108px";
       } else {
         navbar.classList.remove("scrolled");
+        logo.style.height="120px";
+        logo.style.width="216px";
       }
     };
   },
@@ -72,12 +88,12 @@ export default {
   position: sticky;
   top: 0;
   z-index: 8;
-  transition: ease 1000ms;
+  transition: ease 500ms;
 }
 
 .scrolled {
   background-color: rgba(0, 0, 0, 0.9) !important;
-  transition: ease 1000ms !important;
+  transition: ease 500ms !important;
 }
 
 .navbar-light .navbar-nav .nav-link,
@@ -119,6 +135,12 @@ img {
   margin: 0;
   padding: 0;
   padding-bottom: 5px;
+}
+
+#logo {
+  width: 216px;
+  height: 120px;
+  transition: 500ms ease;
 }
 
 a,

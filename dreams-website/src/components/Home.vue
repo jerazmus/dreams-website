@@ -1,18 +1,19 @@
 <template>
   <div class="home">
+    <img src="@/assets/logo/dreams-solo.png" class="logo" />
     <h1 class="guild">Dreams</h1>
     <h1>Dołącz do gildii i razem z nami wejdź w Shadowlands</h1>
     <h2>
       Gildia dla osób zarówno do progresowania contentu jak i casualowego grania
     </h2>
     <a v-bind:target="`_blank`" v-bind:href="raiderio"
-      ><img src="@/assets/home-icons/raiderio.png"
+      ><img src="@/assets/home-icons/raiderio.png" class="wow-icon"
     /></a>
     <a v-bind:target="`_blank`" v-bind:href="wowprogress"
-      ><img src="@/assets/home-icons/wowprogress.png"
+      ><img src="@/assets/home-icons/wowprogress.png" class="wow-icon"
     /></a>
     <a v-bind:target="`_blank`" v-bind:href="warcraftlogs"
-      ><img src="@/assets/home-icons/warcraftlogs.png"
+      ><img src="@/assets/home-icons/warcraftlogs.png" class="wow-icon"
     /></a>
   </div>
 </template>
@@ -55,14 +56,14 @@ h2 {
   text-align: center;
   width: 60vw;
   height: auto;
-  margin: 50vh auto 0px;
+  margin: 10vh auto 0px;
   color: white;
   padding-bottom: 20px;
   font-weight: 300;
   padding: 20px;
 }
 
-img {
+.wow-icon {
   margin: 9vh 5px 0px 5px;
   width: 40px;
   height: 40px;
@@ -72,8 +73,14 @@ img {
   transition: 0.5s;
 }
 
-img:hover {
+.wow-icon:hover {
   border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
 }
 
 @media (max-width: 767px) {
@@ -94,6 +101,11 @@ img:hover {
 
   .home {
     margin: auto;
+  }
+
+  .logo {
+    height: 200px;
+    width: 200px;
   }
 }
 </style>
