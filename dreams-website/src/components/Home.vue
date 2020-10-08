@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="../assets/logo/dreams-solo.png" class="logo non-selectable" />
+    <img src="../assets/logo/dreams-solo3.png" class="logo non-selectable" />
     <h1 class="guild">Dreams</h1>
     <h1>Dołącz do gildii i razem z nami wejdź w Shadowlands</h1>
     <h2>
@@ -117,7 +117,7 @@ h2 {
     margin: auto;
   }
 
-  .logo-box {
+  .logo {
     height: 200px;
     width: 200px;
   }

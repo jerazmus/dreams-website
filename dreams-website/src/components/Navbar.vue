@@ -2,7 +2,7 @@
   <div id="navbar">
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
-        <img src="@/assets/logo/dreams-name.png" id="logo" />
+        <img src="@/assets/logo/dreams-name3.png" id="logo" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
@@ -129,7 +129,7 @@ export default {
 }
 
 #logo {
-  width: 216px;
+  width: 240px;
   height: 120px;
   transition: 500ms ease;
   user-select: none;
