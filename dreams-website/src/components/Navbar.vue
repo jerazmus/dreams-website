@@ -2,7 +2,7 @@
   <div id="navbar">
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
-        <img src="@/assets/logo/dreams-name.png" id="logo">
+        <img src="@/assets/logo/dreams-name.png" id="logo" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
@@ -55,20 +55,20 @@ export default {
       button.setAttribute("aria-expanded", "false");
       collapse.classList.remove("show");
       collapse.style.display = "none";
-    }
+    },
   },
   mounted() {
     const navbar = document.querySelector("#navbar");
     const logo = document.querySelector("#logo");
     window.onscroll = () => {
-      if (window.scrollY >= 1) {
+      if (window.scrollY >= 5) {
         navbar.classList.add("scrolled");
-        logo.style.height="60px";
-        logo.style.width="108px";
+        logo.style.height = "60px";
+        logo.style.width = "108px";
       } else {
         navbar.classList.remove("scrolled");
-        logo.style.height="120px";
-        logo.style.width="216px";
+        logo.style.height = "120px";
+        logo.style.width = "216px";
       }
     };
   },
