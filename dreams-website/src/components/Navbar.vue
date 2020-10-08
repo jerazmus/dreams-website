@@ -64,11 +64,11 @@ export default {
       if (window.scrollY >= 5) {
         navbar.classList.add("scrolled");
         logo.style.height = "60px";
-        logo.style.width = "108px";
+        logo.style.width = "125px";
       } else {
         navbar.classList.remove("scrolled");
         logo.style.height = "120px";
-        logo.style.width = "216px";
+        logo.style.width = "250px";
       }
     };
   },
@@ -129,7 +129,7 @@ export default {
 }
 
 #logo {
-  width: 240px;
+  width: 250px;
   height: 120px;
   transition: 500ms ease;
   user-select: none;
