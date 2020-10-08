@@ -1,20 +1,25 @@
 <template>
   <div class="home">
-    <div class="logo-box">
-    </div>
+    <img src="../assets/logo/dreams-solo.png" class="logo non-selectable" />
     <h1 class="guild">Dreams</h1>
     <h1>Dołącz do gildii i razem z nami wejdź w Shadowlands</h1>
     <h2>
       Gildia dla osób zarówno do progresowania contentu jak i casualowego grania
     </h2>
     <a v-bind:target="`_blank`" v-bind:href="raiderio"
-      ><img src="@/assets/home-icons/raiderio.png" class="wow-icon"
+      ><img
+        src="@/assets/home-icons/raiderio.png"
+        class="wow-icon non-selectable"
     /></a>
     <a v-bind:target="`_blank`" v-bind:href="wowprogress"
-      ><img src="@/assets/home-icons/wowprogress.png" class="wow-icon"
+      ><img
+        src="@/assets/home-icons/wowprogress.png"
+        class="wow-icon non-selectable"
     /></a>
     <a v-bind:target="`_blank`" v-bind:href="warcraftlogs"
-      ><img src="@/assets/home-icons/warcraftlogs.png" class="wow-icon"
+      ><img
+        src="@/assets/home-icons/warcraftlogs.png"
+        class="wow-icon non-selectable"
     /></a>
   </div>
 </template>
@@ -84,12 +89,12 @@ h2 {
   margin: 0 auto;
 }
 
-.logo-box {
-  height: 400px;
-  width: 400px;
-  margin: 0 auto;
-  background: url("../assets/logo/dreams-solo.png");
-  background-size: contain;
+.non-selectable {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 @media (max-width: 767px) {
