@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="../assets/logo/dreams-solo3.png" class="logo non-selectable" />
+    <img src="../assets/logo/final-solo.png" class="logo non-selectable" />
     <h1 class="guild">Dreams</h1>
     <h1>Dołącz do gildii i razem z nami wejdź w Shadowlands</h1>
     <h2>
@@ -62,7 +62,7 @@ h2 {
   text-align: center;
   width: 60vw;
   height: auto;
-  margin: 10vh auto 0px;
+  margin: 7.5vh auto 0px;
   color: white;
   padding-bottom: 20px;
   font-weight: 300;
@@ -70,13 +70,14 @@ h2 {
 }
 
 .wow-icon {
-  margin: 9vh 5px 0px 5px;
+  margin: 2.5vh 5px 0px 5px;
   width: 40px;
   height: 40px;
   margin-right: 2px;
   border: 2px solid transparent;
   border-radius: 50%;
   transition: 0.5s;
+  bottom: 5%;
 }
 
 .wow-icon:hover {
