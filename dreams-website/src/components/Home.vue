@@ -123,4 +123,14 @@ h2 {
     width: 200px;
   }
 }
+
+@media (min-height: 1000px) {
+  .home {
+    margin-top: 15vh;
+  }
+
+  .wow-icon {
+    margin-top: 5vh;
+  }
+}
 </style>
