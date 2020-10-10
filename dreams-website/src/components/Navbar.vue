@@ -2,7 +2,7 @@
   <div id="navbar">
     <b-navbar toggleable="md" sticky>
       <b-navbar-brand @click.prevent="home">
-        <img src="@/assets/logo/dreams-name3.png" id="logo" />
+        <img src="@/assets/logo/final-name.png" id="logo" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse">
@@ -64,11 +64,11 @@ export default {
       if (window.scrollY >= 5) {
         navbar.classList.add("scrolled");
         logo.style.height = "60px";
-        logo.style.width = "125px";
+        logo.style.width = "123.5px";
       } else {
         navbar.classList.remove("scrolled");
         logo.style.height = "120px";
-        logo.style.width = "250px";
+        logo.style.width = "247px";
       }
     };
   },
@@ -129,7 +129,7 @@ export default {
 }
 
 #logo {
-  width: 250px;
+  width: 247px; /* ratio for logo is height*2.07 */
   height: 120px;
   transition: 500ms ease;
   user-select: none;
