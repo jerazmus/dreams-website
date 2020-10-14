@@ -126,7 +126,7 @@ h2 {
 
 @media (min-height: 1000px) {
   .home {
-    margin-top: 15vh;
+    margin-top: 10vh;
   }
 
   .wow-icon {
