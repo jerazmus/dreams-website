@@ -175,7 +175,7 @@ export default {
           role: "dps",
           twitchName: null,
           avatar: null,
-        }
+        },
       ],
       colors: {
         monk: "#00FF96",
@@ -189,8 +189,8 @@ export default {
         hunter: "#A9D271",
         rogue: "#FFF569",
         paladin: "#F58CBA",
-        warrior: "#C79C6E"
-      }
+        warrior: "#C79C6E",
+      },
     };
   },
   methods: {
@@ -214,12 +214,12 @@ export default {
       const avatar = await this.getAvatar(nickname);
       this.roster
         .filter((member) => member.nick === nickname)
-        .forEach((member) => member.avatar = avatar);
+        .forEach((member) => (member.avatar = avatar));
     },
   },
   mounted() {
     this.roster.forEach((member) => this.setAvatar(member.nick));
-  }
+  },
 };
 </script>
 
