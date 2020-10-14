@@ -6,17 +6,17 @@
     <h2>
       Gildia dla osób zarówno do progresowania contentu jak i casualowego grania
     </h2>
-    <a v-bind:target="`_blank`" v-bind:href="raiderio"
+    <a :target="`_blank`" :href="raiderio"
       ><img
         src="@/assets/home-icons/raiderio.png"
         class="wow-icon non-selectable"
     /></a>
-    <a v-bind:target="`_blank`" v-bind:href="wowprogress"
+    <a :target="`_blank`" :href="wowprogress"
       ><img
         src="@/assets/home-icons/wowprogress.png"
         class="wow-icon non-selectable"
     /></a>
-    <a v-bind:target="`_blank`" v-bind:href="warcraftlogs"
+    <a :target="`_blank`" :href="warcraftlogs"
       ><img
         src="@/assets/home-icons/warcraftlogs.png"
         class="wow-icon non-selectable"
